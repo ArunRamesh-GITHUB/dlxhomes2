@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DLX ROI — Unlock Your Property's Hidden Potential</title>
+  <meta name="description" content="DLX ROI identifies UK homes with underused outdoor space, side plots, corner plots, and hidden development potential. Request a free, no-obligation property review today." />
+  <meta name="keywords" content="property development, garden development, plot split, land value, UK property opportunity" />
+  <meta property="og:title" content="DLX ROI — Unlock Your Property's Hidden Potential" />
+  <meta property="og:description" content="DLX ROI identifies UK homes with hidden land and development potential. No-obligation property reviews." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:       #07070f;
+      --bg2:      #0d0d1a;
+      --bg3:      #0a0a18;
+      --card:     #0f0f1e;
+      --gold:     #c9a84c;
+      --gold-lt:  #e2bf74;
+      --text:     #f0f0f5;
+      --muted:    #8888a8;
+      --dim:      #60609a;
+      --border:   rgba(255,255,255,0.06);
+      --border2:  rgba(255,255,255,0.09);
+      --gold-bg:  rgba(201,168,76,0.07);
+      --gold-bd:  rgba(201,168,76,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::selection { background: rgba(201,168,76,0.25); color: var(--gold-lt); }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #1e1e35; border-radius: 3px; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Layout ─────────────────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    section { position: relative; }
+
+    /* ── Scroll-reveal ──────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-left { opacity: 0; transform: translateX(-24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-left.visible { opacity: 1; transform: none; }
+    .reveal-right { opacity: 0; transform: translateX(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    /* ── Navbar ─────────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .nav.scrolled {
+      background: rgba(7,7,15,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 0.875rem; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      padding: 8px 20px; border-radius: 999px;
+      background: var(--gold); color: #07070f;
+      font-size: 0.875rem; font-weight: 600;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 20px rgba(201,168,76,0.2);
+    }
+    .nav-cta:hover { background: var(--gold-lt); box-shadow: 0 0 28px rgba(201,168,76,0.35); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile {
+      display: none; flex-direction: column; gap: 4px; padding: 12px 24px 16px;
+      background: rgba(13,13,26,0.97); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      padding: 10px 12px; border-radius: 8px;
+      font-size: 0.875rem; color: var(--muted);
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav-mobile a:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+    .nav-mobile .nav-cta { text-align: center; margin-top: 8px; display: block; padding: 12px; }
+
+    /* ── Section headings ───────────────────────────────────────── */
+    .section-label {
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.03em;
+      line-height: 1.15; margin-bottom: 20px;
+    }
+    .section-sub { font-size: 1rem; color: var(--dim); line-height: 1.7; max-width: 560px; }
+    .section-head { text-align: center; margin-bottom: 56px; }
+    .section-head .section-sub { margin: 0 auto; }
+
+    /* ── Hero ───────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding-top: 64px; overflow: hidden;
+      background:
+        linear-gradient(to bottom, transparent 80%, var(--bg) 100%),
+        radial-gradient(ellipse 900px 600px at 50% 38%, rgba(201,168,76,0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 400px at 95% 20%, rgba(30,30,120,0.07) 0%, transparent 60%),
+        repeating-linear-gradient(to right, rgba(255,255,255,0.018) 0, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 64px),
+        repeating-linear-gradient(to bottom, rgba(255,255,255,0.018) 0, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 64px),
+        var(--bg);
+    }
+    .hero-inner { text-align: center; padding: 48px 24px; max-width: 900px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 999px;
+      border: 1px solid var(--gold-bd); background: var(--gold-bg);
+      color: var(--gold); font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 28px;
+      animation: fadeUp 0.5s ease 0.1s both;
+    }
+    .hero-badge svg { flex-shrink: 0; }
+    .hero-h1 {
+      font-size: clamp(2.2rem, 6vw, 4.4rem); font-weight: 800;
+      letter-spacing: -0.04em; line-height: 1.07; margin-bottom: 24px;
+      animation: fadeUp 0.65s ease 0.2s both;
+    }
+    .hero-h1 .gold { color: var(--gold); position: relative; display: inline-block; }
+    .hero-h1 .gold::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,0.5), transparent);
+    }
+    .hero-h1 .dim { color: #888898; }
+    .hero-p {
+      font-size: 1.05rem; color: var(--dim); max-width: 600px; margin: 0 auto 36px;
+      line-height: 1.75; animation: fadeUp 0.6s ease 0.36s both;
+    }
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+      animation: fadeUp 0.5s ease 0.5s both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 999px;
+      background: var(--gold); color: #07070f; font-weight: 600; font-size: 1rem;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 0 32px rgba(201,168,76,0.28);
+    }
+    .btn-primary:hover { background: var(--gold-lt); box-shadow: 0 0 44px rgba(201,168,76,0.42); transform: translateY(-1px); }
+    .btn-primary svg { transition: transform 0.2s; }
+    .btn-primary:hover svg { transform: translateX(3px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1); color: var(--muted); font-size: 1rem;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.03); }
+    .hero-trust {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 28px;
+      margin-top: 52px; animation: fadeIn 0.6s ease 0.85s both;
+    }
+    .hero-trust span {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; color: #50506a;
+    }
+    .hero-trust span::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: rgba(201,168,76,0.4); flex-shrink: 0;
+    }
+    .scroll-line {
+      width: 1px; height: 52px; margin: 40px auto 0;
+      background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent);
+      animation: fadeIn 0.5s ease 1.3s both, pulse 2s ease-in-out 1.3s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* ── How It Works ───────────────────────────────────────────── */
+    #how-it-works {
+      padding: 96px 0;
+      background: linear-gradient(to bottom, var(--bg), var(--bg3), var(--bg));
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .step-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .step-card:hover { border-color: var(--gold-bd); box-shadow: 0 4px 30px rgba(201,168,76,0.07); }
+    .step-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+    .step-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--gold-bg); border: 1px solid var(--gold-bd);
+      display: flex; align-items: center; justify-content: center; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .step-num { font-size: 1.4rem; font-weight: 700; color: rgba(255,255,255,0.04); }
+    .step-card h3 { font-size: 0.875rem; font-weight: 600; margin-bottom: 8px; line-height: 1.35; }
+    .step-card p { font-size: 0.75rem; color: var(--dim); line-height: 1.65; }
+
+    /* ── What We Look For ───────────────────────────────────────── */
+    #what-we-look-for { padding: 96px 0; background: var(--bg); }
+    .criteria-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+    }
+    .criteria-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+    .criteria-card:hover {
+      border-color: var(--gold-bd); box-shadow: 0 4px 40px rgba(201,168,76,0.08);
+      transform: translateY(-2px);
+    }
+    .criteria-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--gold-bg); border: 1px solid var(--gold-bd);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); margin-bottom: 20px;
+      transition: background 0.2s;
+    }
+    .criteria-card:hover .criteria-icon { background: rgba(201,168,76,0.12); }
+    .criteria-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+    .criteria-card p { font-size: 0.875rem; color: var(--dim); line-height: 1.65; }
+
+    /* ── Why Contact ─────────────────────────────────────────────── */
+    #why-contact {
+      padding: 96px 0;
+      background: linear-gradient(to bottom, var(--bg), var(--bg3), var(--bg));
+    }
+    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .why-left .section-sub { max-width: 400px; margin-bottom: 32px; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: 999px;
+      border: 1px solid var(--gold-bd); background: var(--gold-bg);
+      color: var(--gold); font-size: 0.875rem; font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: rgba(201,168,76,0.14); }
+    .reason-list { display: flex; flex-direction: column; gap: 14px; }
+    .reason-item {
+      display: flex; gap: 14px; padding: 14px;
+      border-radius: 12px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.015);
+      transition: border-color 0.2s;
+    }
+    .reason-item:hover { border-color: var(--border2); }
+    .reason-icon {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px;
+      background: var(--gold-bg); border: 1px solid var(--gold-bd);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); margin-top: 2px;
+    }
+    .reason-item h4 { font-size: 0.875rem; font-weight: 500; margin-bottom: 4px; }
+    .reason-item p { font-size: 0.78rem; color: #585890; line-height: 1.55; }
+
+    /* ── Visualisations ─────────────────────────────────────────── */
+    #visualisations { padding: 96px 0; background: var(--bg); }
+    .vis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .vis-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .vis-card:hover { border-color: rgba(255,255,255,0.1); box-shadow: 0 8px 50px rgba(0,0,0,0.3); }
+    .vis-panel {
+      display: flex; height: 180px; position: relative;
+    }
+    .vis-before, .vis-after {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 16px; text-align: center; gap: 8px;
+    }
+    .vis-before { border-right: 1px solid rgba(255,255,255,0.04); }
+    .vis-label { font-size: 8px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+    .vis-before .vis-label { color: rgba(255,255,255,0.2); }
+    .vis-shape {
+      width: 80px; aspect-ratio: 4/3; position: relative; border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.015);
+    }
+    .vis-shape-inner { position: absolute; inset: 6px 6px 20px; background: rgba(255,255,255,0.03); border-radius: 2px; }
+    .vis-shape-gap { position: absolute; bottom: 0; left: 6px; right: 6px; height: 16px; border: 1px dashed rgba(255,255,255,0.08); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 6px; color: rgba(255,255,255,0.15); }
+    .vis-desc { font-size: 8px; color: rgba(255,255,255,0.18); line-height: 1.4; }
+    .vis-arrow {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.2); z-index: 2;
+    }
+    .vis-footer { padding: 14px 18px; border-top: 1px solid rgba(255,255,255,0.04); }
+    .vis-footer h3 { font-size: 0.875rem; font-weight: 600; margin-bottom: 2px; }
+    .vis-footer p { font-size: 0.75rem; color: var(--dim); }
+    .vis-tag { font-size: 0.65rem; color: var(--dim); display: flex; align-items: center; gap: 4px; float: right; margin-top: 2px; }
+    .vis-note { text-align: center; font-size: 0.75rem; color: #3a3a60; margin-top: 24px; }
+
+    /* ── Trust ──────────────────────────────────────────────────── */
+    #trust {
+      padding: 96px 0;
+      background: linear-gradient(to bottom, var(--bg), #0c0c1e, var(--bg));
+    }
+    .trust-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;
+    }
+    .trust-item {
+      display: flex; gap: 16px; padding: 20px;
+      border-radius: 16px; background: rgba(255,255,255,0.015);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .trust-item:hover { border-color: var(--border2); }
+    .trust-icon {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px;
+      background: var(--gold-bg); border: 1px solid var(--gold-bd);
+      display: flex; align-items: center; justify-content: center; color: var(--gold);
+    }
+    .trust-item h3 { font-size: 0.875rem; font-weight: 600; margin-bottom: 6px; }
+    .trust-item p { font-size: 0.8rem; color: #565688; line-height: 1.6; }
+
+    /* ── Contact Form ───────────────────────────────────────────── */
+    #contact { padding: 96px 0; background: var(--bg); }
+    .form-wrap {
+      max-width: 760px; margin: 0 auto;
+      background: var(--card); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 0 80px rgba(0,0,0,0.4);
+    }
+    .form-inner { padding: 40px 40px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+    .form-field { display: flex; flex-direction: column; gap: 8px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label { font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+    .form-field label .req { color: var(--gold); }
+    .form-field input, .form-field textarea {
+      padding: 12px 16px; border-radius: 12px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+      color: var(--text); font-family: inherit; font-size: 0.875rem;
+      transition: border-color 0.2s, background 0.2s; outline: none;
+    }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #30304a; }
+    .form-field input:focus, .form-field textarea:focus {
+      border-color: rgba(201,168,76,0.4); background: rgba(255,255,255,0.05);
+    }
+    .form-field textarea { resize: none; }
+    .form-field.full.postcard { grid-column: 1 / -1; }
+    .checkbox-row { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+    .checkbox-row input[type="checkbox"] { display: none; }
+    .custom-cb {
+      width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.03);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .custom-cb svg { display: none; }
+    .checkbox-row:has(input:checked) .custom-cb { background: var(--gold); border-color: var(--gold); }
+    .checkbox-row:has(input:checked) .custom-cb svg { display: block; }
+    .checkbox-row span { font-size: 0.875rem; color: var(--muted); }
+    .form-submit {
+      width: 100%; margin-top: 28px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 16px; border-radius: 12px;
+      background: var(--gold); color: #07070f; font-weight: 600; font-size: 1rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 32px rgba(201,168,76,0.22);
+    }
+    .form-submit:hover { background: var(--gold-lt); box-shadow: 0 0 44px rgba(201,168,76,0.35); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-privacy { font-size: 0.72rem; color: #404060; text-align: center; margin-top: 14px; line-height: 1.5; }
+    .form-success { display: none; padding: 48px; text-align: center; }
+    .form-success.show { display: block; }
+    .form-inner.hide { display: none; }
+    .success-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--gold-bg); border: 1px solid var(--gold-bd);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); margin: 0 auto 24px;
+    }
+    .form-success h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
+    .form-success p { color: var(--dim); max-width: 400px; margin: 0 auto; line-height: 1.65; }
+
+    /* ── FAQ ─────────────────────────────────────────────────────── */
+    #faq {
+      padding: 96px 0;
+      background: linear-gradient(to bottom, var(--bg), var(--bg3), var(--bg));
+    }
+    .faq-wrap { max-width: 720px; margin: 0 auto; }
+    .faq-list {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden;
+    }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 20px 28px; text-align: left;
+      font-size: 0.9375rem; font-weight: 500; color: rgba(255,255,255,0.8);
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--text); }
+    .faq-icon {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--dim); transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .faq-item.open .faq-icon { border-color: var(--gold-bd); color: var(--gold); background: var(--gold-bg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 400px; }
+    .faq-a-inner { padding: 0 28px 20px; font-size: 0.875rem; color: var(--dim); line-height: 1.75; }
+    .faq-footer { text-align: center; margin-top: 28px; }
+    .faq-footer p { font-size: 0.875rem; color: #505090; margin-bottom: 10px; }
+    .faq-footer a { font-size: 0.875rem; color: var(--gold); text-decoration: underline; text-underline-offset: 4px; transition: color 0.2s; }
+    .faq-footer a:hover { color: var(--gold-lt); }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      background: #050509; border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 56px 0 28px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
+    .footer-brand h2 span { color: var(--gold); }
+    .footer-brand p { font-size: 0.875rem; color: #505078; line-height: 1.65; max-width: 260px; }
+    .footer-col h4 {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      color: #70709a; margin-bottom: 16px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.875rem; color: #52527a; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-contact { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .footer-contact a { display: flex; align-items: center; gap: 10px; font-size: 0.875rem; color: #52527a; transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-legal-links { display: flex; gap: 16px; }
+    .footer-legal-links a { font-size: 0.75rem; color: #3e3e60; transition: color 0.2s; }
+    .footer-legal-links a:hover { color: #707090; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.04); padding-top: 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { font-size: 0.75rem; color: #32324e; }
+
+    /* ── Animations ─────────────────────────────────────────────── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .why-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .section-title { font-size: 1.7rem; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .hero-btns .btn-primary, .hero-btns .btn-ghost { justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-inner { padding: 24px 20px; }
+      .faq-q { padding: 18px 18px; font-size: 0.875rem; }
+      .faq-a-inner { padding: 0 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ NAVBAR ══ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">DLX <span>ROI</span></a>
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#what-we-look-for">What We Look For</a>
+        <a href="#why-contact">Why Contact Us</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#contact" class="nav-cta">Request Free Review</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="mobile-menu">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#what-we-look-for">What We Look For</a>
+    <a href="#why-contact">Why Contact Us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Request Free Review</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════ HERO ════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      UK Property Opportunity Specialists
+    </div>
+    <h1 class="hero-h1">
+      Your property may hold <span class="gold">hidden value</span><br>
+      <span class="dim">you haven't considered.</span>
+    </h1>
+    <p class="hero-p">
+      DLX ROI identifies residential properties across the UK with untapped outdoor space, side plots, corner plots, and land opportunity. We create tailored concept visuals and opportunity reports — so you can see what might be possible.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">
+        Request Free Property Review
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="hero-trust">
+      <span>No obligation to proceed</span>
+      <span>UK-focused approach</span>
+      <span>Professional &amp; respectful</span>
+      <span>Selected properties only</span>
+    </div>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ HOW IT WORKS ══ -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">The Process</p>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">A clear, transparent process — from identification to conversation.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal" style="transition-delay:0.08s">
+        <div class="step-top">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <span class="step-num">01</span>
+        </div>
+        <h3>We Identify Opportunities</h3>
+        <p>We pinpoint residential properties that appear to have underused outdoor space, side plots, or development potential.</p>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.16s">
+        <div class="step-top">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <span class="step-num">02</span>
+        </div>
+        <h3>We Assess the Potential</h3>
+        <p>Our team reviews the property in detail — plot size, access, local planning context, and what kind of opportunity may exist.</p>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.24s">
+        <div class="step-top">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <span class="step-num">03</span>
+        </div>
+        <h3>We Create Visualisations</h3>
+        <p>We produce tailored concept visuals and a personalised opportunity report showing what might be achievable.</p>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.32s">
+        <div class="step-top">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <span class="step-num">04</span>
+        </div>
+        <h3>Homeowner Gets in Touch</h3>
+        <p>You receive our materials and, if you're curious, you choose to reach out. No pressure — we're simply opening a conversation.</p>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.40s">
+        <div class="step-top">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 11H3l-2-8h24l-2 8H6"/><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+          </div>
+          <span class="step-num">05</span>
+        </div>
+        <h3>We Discuss Next Steps</h3>
+        <p>If there's mutual interest, we explore what the opportunity could look like and what your options might be. No hard sell, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ WHAT WE LOOK FOR ════ -->
+<section id="what-we-look-for">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Criteria</p>
+      <h2 class="section-title">What we look for</h2>
+      <p class="section-sub">We focus on residential properties with specific characteristics that suggest untapped potential. Here's what catches our attention.</p>
+    </div>
+    <div class="criteria-grid">
+      <div class="criteria-card reveal" style="transition-delay:0.07s">
+        <div class="criteria-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 22"/><path d="M21 5q-1 6-7 9"/><path d="M12 9a7 7 0 0 0-7 7c0 2 1 4 2 5"/></svg>
+        </div>
+        <h3>Large Rear Gardens</h3>
+        <p>Properties where the rear garden offers substantial space — potentially enough to be split, developed, or used for a significant outbuilding or garden room.</p>
+      </div>
+      <div class="criteria-card reveal" style="transition-delay:0.14s">
+        <div class="criteria-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>
+        </div>
+        <h3>Corner Plots</h3>
+        <p>Corner-positioned homes often have additional land wrapping the side and rear, offering surprising development and access opportunities.</p>
+      </div>
+      <div class="criteria-card reveal" style="transition-delay:0.21s">
+        <div class="criteria-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3>Side Land &amp; Passageways</h3>
+        <p>Wide side access or additional side plots adjacent to the main property — sometimes substantial enough to be used or separated independently.</p>
+      </div>
+      <div class="criteria-card reveal" style="transition-delay:0.28s">
+        <div class="criteria-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </div>
+        <h3>Wide Frontage Plots</h3>
+        <p>Properties sitting on unusually wide plots may have scope for garden divisions, additional driveways, or potential plot subdivision.</p>
+      </div>
+      <div class="criteria-card reveal" style="transition-delay:0.35s">
+        <div class="criteria-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16M3 10h18M3 16h18"/></svg>
+        </div>
+        <h3>Infill Opportunities</h3>
+        <p>Gaps between established properties or at the end of a terrace can sometimes accommodate a new dwelling or purpose-built structure.</p>
+      </div>
+      <div class="criteria-card reveal" style="transition-delay:0.42s">
+        <div class="criteria-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Extension &amp; Garden Room Potential</h3>
+        <p>Homes with clear space to extend outward, or land that could accommodate a garden office, studio, or similar purpose-built structure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════ WHY CONTACT US ══ -->
+<section id="why-contact">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-left reveal-left">
+        <p class="section-label">Motivation</p>
+        <h2 class="section-title">Why homeowners<br><span style="color:var(--gold)">contact us</span></h2>
+        <p class="section-sub">People reach out for all sorts of reasons. Most simply want to understand what their property could be worth with a different approach — and that's exactly what we're here to explore together.</p>
+        <a href="#contact" class="btn-outline">Start a conversation</a>
+      </div>
+      <div class="reason-list reveal-right">
+        <div class="reason-item">
+          <div class="reason-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <h4>Curious about what their land could be worth</h4>
+            <p>Many homeowners have never had their full plot assessed. We help put a clearer picture on what might be possible.</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <h4>Interested in exploring development potential</h4>
+            <p>Whether it's a garden room, plot split, or understanding planning context — we help open that conversation.</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h4>Considering selling part of their garden</h4>
+            <p>Separating a portion of land can unlock significant value without having to move or fully downsize.</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div>
+            <h4>Wanting ideas to increase property value</h4>
+            <p>A fresh perspective on your property can reveal options you hadn't considered. That's exactly what we provide.</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <h4>Looking for a no-pressure conversation</h4>
+            <p>We're not here to push anyone into a decision. If you're simply curious, that's reason enough to get in touch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ VISUALISATIONS ═══ -->
+<section id="visualisations">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Opportunity Concepts</p>
+      <h2 class="section-title">Seeing the potential</h2>
+      <p class="section-sub">Every property is different. Our concept visuals help homeowners see what might be possible — making abstract ideas tangible and real.</p>
+    </div>
+    <div class="vis-grid">
+      <div class="vis-card reveal" style="transition-delay:0.09s">
+        <div class="vis-panel" style="background:linear-gradient(135deg,#1a120044,#09091a)">
+          <div class="vis-before">
+            <span class="vis-label">Before</span>
+            <div class="vis-shape">
+              <div class="vis-shape-inner"></div>
+              <div class="vis-shape-gap">unused</div>
+            </div>
+            <span class="vis-desc">Large underused rear garden</span>
+          </div>
+          <div class="vis-arrow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+          <div class="vis-after" style="background:linear-gradient(135deg,#1a120033,#0f0f1e)">
+            <span class="vis-label" style="color:rgba(201,168,76,0.6)">After</span>
+            <div class="vis-shape" style="border-color:rgba(201,168,76,0.25);background:rgba(201,168,76,0.05)">
+              <div class="vis-shape-inner"></div>
+              <div style="position:absolute;top:6px;right:6px;bottom:0;left:52%;border:1px solid rgba(201,168,76,0.35);background:rgba(201,168,76,0.08);border-radius:2px"></div>
+              <div style="position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:#c9a84c"></div>
+            </div>
+            <span class="vis-desc" style="color:rgba(201,168,76,0.7)">Separated developable plot</span>
+          </div>
+        </div>
+        <div class="vis-footer">
+          <span class="vis-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Concept
+          </span>
+          <h3>Garden Plot Split</h3>
+          <p>Corner-plot property — rear garden</p>
+        </div>
+      </div>
+      <div class="vis-card reveal" style="transition-delay:0.18s">
+        <div class="vis-panel" style="background:linear-gradient(135deg,#00051a44,#09091a)">
+          <div class="vis-before">
+            <span class="vis-label">Before</span>
+            <div class="vis-shape">
+              <div class="vis-shape-inner"></div>
+              <div class="vis-shape-gap">unused</div>
+            </div>
+            <span class="vis-desc">Narrow side plot, redundant space</span>
+          </div>
+          <div class="vis-arrow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+          <div class="vis-after" style="background:linear-gradient(135deg,#00051a33,#0f0f1e)">
+            <span class="vis-label" style="color:rgba(123,154,255,0.6)">After</span>
+            <div class="vis-shape" style="border-color:rgba(123,154,255,0.25);background:rgba(123,154,255,0.05)">
+              <div class="vis-shape-inner"></div>
+              <div style="position:absolute;top:6px;right:6px;bottom:0;left:52%;border:1px solid rgba(123,154,255,0.35);background:rgba(123,154,255,0.08);border-radius:2px"></div>
+              <div style="position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:#7b9aff"></div>
+            </div>
+            <span class="vis-desc" style="color:rgba(123,154,255,0.7)">Planning-assessed gap site</span>
+          </div>
+        </div>
+        <div class="vis-footer">
+          <span class="vis-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Concept
+          </span>
+          <h3>Side Land Opportunity</h3>
+          <p>Semi-detached property — side access</p>
+        </div>
+      </div>
+      <div class="vis-card reveal" style="transition-delay:0.27s">
+        <div class="vis-panel" style="background:linear-gradient(135deg,#001a0e44,#09091a)">
+          <div class="vis-before">
+            <span class="vis-label">Before</span>
+            <div class="vis-shape">
+              <div class="vis-shape-inner"></div>
+              <div class="vis-shape-gap">unused</div>
+            </div>
+            <span class="vis-desc">Deep garden beyond 30m</span>
+          </div>
+          <div class="vis-arrow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+          <div class="vis-after" style="background:linear-gradient(135deg,#001a0e33,#0f0f1e)">
+            <span class="vis-label" style="color:rgba(94,220,180,0.6)">After</span>
+            <div class="vis-shape" style="border-color:rgba(94,220,180,0.25);background:rgba(94,220,180,0.05)">
+              <div class="vis-shape-inner"></div>
+              <div style="position:absolute;top:6px;right:6px;bottom:0;left:52%;border:1px solid rgba(94,220,180,0.35);background:rgba(94,220,180,0.08);border-radius:2px"></div>
+              <div style="position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:#5edcb4"></div>
+            </div>
+            <span class="vis-desc" style="color:rgba(94,220,180,0.7)">Garden office / studio concept</span>
+          </div>
+        </div>
+        <div class="vis-footer">
+          <span class="vis-tag">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Concept
+          </span>
+          <h3>Garden Room / Studio</h3>
+          <p>Detached property — deep rear garden</p>
+        </div>
+      </div>
+    </div>
+    <p class="vis-note reveal">All visuals are illustrative concept examples only. Actual outcomes vary and are subject to planning, site conditions, and other constraints.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ TRUST ═══ -->
+<section id="trust">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Our Commitment</p>
+      <h2 class="section-title">Professional by design</h2>
+      <p class="section-sub">We understand that receiving unexpected contact about your property can feel unusual. Here's what you can always expect from us.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item reveal" style="transition-delay:0.07s">
+        <div class="trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h3>No obligation whatsoever</h3>
+          <p>Enquiring with us carries zero obligation. You're simply starting a conversation to understand your options — at no cost and with no strings attached.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal" style="transition-delay:0.13s">
+        <div class="trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <h3>Professional, respectful approach</h3>
+          <p>We operate with discretion and respect. We're not cold-calling salespeople — we're property opportunity specialists who take our reputation seriously.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal" style="transition-delay:0.19s">
+        <div class="trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h3>UK-focused operations</h3>
+          <p>We work exclusively within the United Kingdom, with a clear understanding of UK planning policy and the residential property market.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal" style="transition-delay:0.25s">
+        <div class="trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h3>Selected properties only</h3>
+          <p>We don't contact every home on a street. Our approach is considered and targeted — we only reach out when there's genuine reason to do so.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal" style="transition-delay:0.31s">
+        <div class="trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div>
+          <h3>Your data stays private</h3>
+          <p>Any information you share with us is treated with complete confidence and is never passed to third parties without your explicit consent.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal" style="transition-delay:0.37s">
+        <div class="trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div>
+          <h3>Careful, considered analysis</h3>
+          <p>We thoroughly review every opportunity before reaching out. Our assessments are based on genuine analysis — not mass speculation or automated guesswork.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ CONTACT FORM ═════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Request your free property review</h2>
+      <p class="section-sub">Tell us about your property and we'll be in touch to discuss what opportunities might exist. No obligation, no pressure.</p>
+    </div>
+    <div class="form-wrap reveal">
+      <div class="form-inner" id="form-inner">
+        <!-- Replace the action URL with your form endpoint (e.g. Formspree: https://formspree.io/f/YOUR_ID) -->
+        <form id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="07700 900000" />
+            </div>
+            <div class="form-field">
+              <label for="postcode">Property Postcode <span class="req">*</span></label>
+              <input type="text" id="postcode" name="postcode" placeholder="SW1A 1AA" required style="text-transform:uppercase" />
+            </div>
+            <div class="form-field full">
+              <label for="message">Tell Us About Your Property</label>
+              <textarea id="message" name="message" rows="4" placeholder="E.g. I have a large rear garden / side plot / corner plot and would like to understand its potential..."></textarea>
+            </div>
+            <div class="form-field full postcard">
+              <label class="checkbox-row">
+                <input type="checkbox" id="postcard" name="postcard" />
+                <div class="custom-cb">
+                  <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#07070f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <span>I received a postcard from DLX ROI</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="form-submit" id="submit-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send My Enquiry
+          </button>
+          <p class="form-privacy">By submitting this form you agree to us contacting you regarding your enquiry. We will never share your details with third parties.</p>
+        </form>
+      </div>
+      <div class="form-success" id="form-success">
+        <div class="success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Thank you for reaching out</h3>
+        <p>We've received your enquiry and will review it carefully. If your property looks like a strong fit, we'll be in touch shortly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ FAQ ════ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-label">Questions</p>
+      <h2 class="section-title">Frequently asked questions</h2>
+      <p class="section-sub">Common questions from homeowners who've received our materials or come across DLX ROI.</p>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">
+            Why did I receive a postcard from DLX ROI?
+            <span class="faq-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">We proactively identify properties across the UK that appear to have interesting outdoor space, land, or development characteristics. If you received a postcard, it's because your property caught our attention during our analysis. There is absolutely no obligation to respond — we're simply making you aware that we see potential, and inviting a conversation if you're curious.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            Does receiving your materials mean I can definitely build on my land?
+            <span class="faq-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Not at all. Our outreach is based on initial analysis and visual assessment. Whether any development, plot split, or improvement is actually possible depends on many factors — including local planning policy, the local authority's decisions, site conditions, and more. We help you understand what might be worth exploring. Nothing is guaranteed.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            Do I need planning permission to do anything with my land?
+            <span class="faq-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">In most cases, yes. Any significant change of use, new dwelling, or substantial outbuilding will require planning permission from your local planning authority. Some smaller structures may fall under permitted development rights. We're not planning consultants and cannot advise on planning outcomes, but we can help you understand what kind of opportunity may exist and point you toward the right professionals.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            Am I under any obligation if I get in touch?
+            <span class="faq-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Absolutely not. Getting in touch is completely no-obligation. We'll have a friendly conversation about your property, discuss what we've identified, and explore whether there's any mutual interest. You're under no pressure at any stage, and you can end the conversation at any point.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            What kinds of properties do you focus on?
+            <span class="faq-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">We look for residential properties in the UK with specific characteristics — large rear gardens, corner plots, side land, wide frontages, deep plots, and similar features that suggest there may be untapped value. We don't have a one-size-fits-all approach; each property is assessed individually before we reach out.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            Do you work across the whole of the UK?
+            <span class="faq-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">We primarily focus on residential properties across England and Wales, where permitted development rights and planning policy are broadly consistent. We're continually expanding our activity to new areas. If you've received contact from us, we are actively working in your region.</div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-footer">
+        <p>Still have a question not answered here?</p>
+        <a href="#contact">Get in touch directly →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2>DLX <span>ROI</span></h2>
+        <p>Identifying hidden property value across the UK. Premium analysis, thoughtful outreach, and no-pressure conversations.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#what-we-look-for">What We Look For</a></li>
+          <li><a href="#why-contact">Why Contact Us</a></li>
+          <li><a href="#contact">Request a Review</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <a href="mailto:hello@dlxroi.co.uk">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hello@dlxroi.co.uk
+          </a>
+          <a href="tel:+441234567890">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.42 2 2 0 0 1 3.57 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+            +44 (0) 1234 567 890
+          </a>
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> DLX ROI. All rights reserved. Registered in England &amp; Wales.</p>
+      <p>All opportunity assessments are indicative only. Nothing on this site constitutes planning or legal advice.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Navbar scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }, { passive: true });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Contact form
+  document.getElementById('contact-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<svg class="spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending...';
+
+    // Simulate submission — replace with real fetch() to your form endpoint
+    await new Promise(r => setTimeout(r, 1000));
+
+    document.getElementById('form-inner').classList.add('hide');
+    document.getElementById('form-success').classList.add('show');
+  });
+</script>
+<style>
+  .spin { animation: spinAnim 0.8s linear infinite; }
+  @keyframes spinAnim { to { transform: rotate(360deg); } }
+</style>
+</body>
+</html>

@@ -6,28 +6,28 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    q: "Why did I receive a postcard from DLX ROI?",
-    a: "We proactively identify properties across the UK that appear to have interesting outdoor space, land, or development characteristics. If you received a postcard, it's because your property caught our attention during our analysis. There is absolutely no obligation to respond — we're simply making you aware that we see potential, and inviting a conversation if you're curious.",
+    q: "Why did I receive a letter from DLX ROI?",
+    a: "We analyse publicly available EPC and Land Registry data to identify homes that may be harder to cool naturally. If you received a letter, it's because your property's EPC rating, construction age, or property type suggests it may benefit from a cooling review. There is no obligation to respond — we're simply letting you know, and inviting a conversation if you're curious.",
   },
   {
-    q: "Does receiving your materials mean I can definitely build on my land?",
-    a: "Not at all. Our outreach is based on initial analysis and visual assessment. Whether any development, plot split, or improvement is actually possible depends on many factors — including local planning policy, the local authority's decisions, site conditions, and more. We help you understand what might be worth exploring. Nothing is guaranteed.",
+    q: "Does this mean my home definitely has a cooling problem?",
+    a: "Not at all. Our letter is based on publicly available EPC and property data — it is not a survey, inspection, or professional assessment. It means your property scored well on our cooling indicators and may be worth reviewing before the next hot spell. The free check is how we find out what's actually relevant for your specific home.",
   },
   {
-    q: "Do I need planning permission to do anything with my land?",
-    a: "In most cases, yes. Any significant change of use, new dwelling, or substantial outbuilding will require planning permission from your local planning authority. Some smaller structures may fall under permitted development rights. We're not planning consultants and cannot advise on planning outcomes, but we can help you understand what kind of opportunity may exist and point you toward the right professionals.",
+    q: "Is the Home Cooling Readiness Check really free?",
+    a: "Yes, completely. The check costs nothing and carries no obligation. We look at which rooms are most likely to overheat, whether passive improvements or an AC / heat pump system may be suitable, and where a unit could realistically go. If proper cooling isn't the right answer for your property, we'll say so — and there's nothing to pay.",
   },
   {
-    q: "Am I under any obligation if I get in touch?",
-    a: "Absolutely not. Getting in touch is completely no-obligation. We'll have a friendly conversation about your property, discuss what we've identified, and explore whether there's any mutual interest. You're under no pressure at any stage, and you can end the conversation at any point.",
+    q: "Will I need planning permission for AC or a heat pump?",
+    a: "In many cases, air-to-air heat pump and split-system AC installations fall under permitted development rights for houses and do not require a planning application. However, conservation areas, Article 4 directions, listed buildings, leasehold terms, and noise constraints can all affect this. Our check helps identify which of these may apply to your property before you spend any money.",
   },
   {
-    q: "What kinds of properties do you focus on?",
-    a: "We look for residential properties in the UK with specific characteristics — large rear gardens, corner plots, side land, wide frontages, deep plots, and similar features that suggest there may be untapped value. We don't have a one-size-fits-all approach; each property is assessed individually before we reach out.",
+    q: "What types of properties do you focus on?",
+    a: "We focus on freehold houses across England and Wales with EPC ratings of D, E, F, or G, particularly older and terraced or semi-detached homes where natural cooling is more limited. We exclude flats, leaseholds, and properties in flood zone 3, as these have specific constraints that change the analysis significantly.",
   },
   {
-    q: "Do you work across the whole of the UK?",
-    a: "We primarily focus on residential properties across England and Wales, where permitted development rights and planning policy are broadly consistent. We're continually expanding our activity to new areas. If you've received contact from us, we are actively working in your region.",
+    q: "Do you cover the whole of the UK?",
+    a: "We currently focus on residential properties across England and Wales, where EPC data from the Open Data Communities registry is available and planning policy is broadly consistent. If you received a letter from us, we are actively working in your area.",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function FAQ() {
             Frequently asked questions
           </h2>
           <p className="text-[#6060a0] text-base">
-            Common questions from homeowners who&apos;ve received our materials or come
+            Common questions from homeowners who&apos;ve received our letter or come
             across DLX ROI.
           </p>
         </motion.div>

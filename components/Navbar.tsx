@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "What We Look For", href: "#what-we-look-for" },
-  { label: "Why Contact Us", href: "#why-contact" },
+  { label: "Why Request a Check", href: "#why-contact" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -66,7 +66,7 @@ export default function Navbar() {
           onClick={() => handleLink("#contact")}
           className="hidden md:inline-flex items-center px-5 py-2 text-sm font-semibold rounded-full bg-dlx-gold text-[#07070f] hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_20px_rgba(201,168,76,0.2)]"
         >
-          Request Free Review
+          Free Cooling Check
         </button>
 
         {/* Mobile toggle */}
@@ -103,7 +103,7 @@ export default function Navbar() {
                 onClick={() => handleLink("#contact")}
                 className="mt-3 px-5 py-3 text-sm font-semibold rounded-full bg-dlx-gold text-[#07070f] hover:bg-dlx-gold-light transition-all duration-200 text-center"
               >
-                Request Free Review
+                Free Cooling Check
               </button>
             </div>
           </motion.div>

@@ -2,36 +2,57 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Eye, ArrowRight } from "lucide-react";
+import { Thermometer, Wind, Zap } from "lucide-react";
 
 const concepts = [
   {
-    label: "Garden Plot Split",
-    subtitle: "Corner-plot property — rear garden",
-    before: "Large underused rear garden",
-    after: "Separated developable plot with independent access",
+    label: "EPC Rating & Improvement Gap",
+    subtitle: "How we score cooling potential",
+    icon: Zap,
     accent: "#c9a84c",
     glowFrom: "#1a1200",
+    bands: [
+      { label: "G", pts: 30, active: true },
+      { label: "F", pts: 25, active: true },
+      { label: "E", pts: 20, active: true },
+      { label: "D", pts: 12, active: true },
+      { label: "C", pts: 5, active: false },
+    ],
+    detail: "A larger gap between current and potential EPC adds up to +15 points to the cooling score.",
   },
   {
-    label: "Side Land Opportunity",
-    subtitle: "Semi-detached property — side access",
-    before: "Narrow side plot, redundant space",
-    after: "Planning-assessed gap site potential",
+    label: "Property Type & Age",
+    subtitle: "Construction factors we assess",
+    icon: Thermometer,
     accent: "#7b9aff",
     glowFrom: "#00051a",
+    bands: [
+      { label: "Pre-1930", pts: 15, active: true },
+      { label: "Pre-1980", pts: 15, active: true },
+      { label: "Terraced", pts: 10, active: true },
+      { label: "Semi-det", pts: 8, active: true },
+      { label: "Post-2000", pts: 0, active: false },
+    ],
+    detail: "Older terraced and semi-detached homes score highest — they're hardest to cool naturally.",
   },
   {
-    label: "Garden Room / Studio",
-    subtitle: "Detached property — deep rear garden",
-    before: "Deep garden beyond 30m",
-    after: "Purpose-built garden office or studio concept",
+    label: "Planning & Data Confidence",
+    subtitle: "Flags that affect eligibility",
+    icon: Wind,
     accent: "#5edcb4",
     glowFrom: "#001a0e",
+    bands: [
+      { label: "No constraints", pts: 5, active: true },
+      { label: "High confidence", pts: 10, active: true },
+      { label: "Conservation", pts: 0, active: false },
+      { label: "Listed bldg", pts: 0, active: false },
+      { label: "Flood zone 3", pts: 0, active: false },
+    ],
+    detail: "Conservation areas, listed buildings, and flood zones reduce eligibility for straightforward installations.",
   },
 ];
 
-function ConceptCard({
+function ScoreCard({
   concept,
   index,
   inView,
@@ -40,6 +61,7 @@ function ConceptCard({
   index: number;
   inView: boolean;
 }) {
+  const Icon = concept.icon;
   return (
     <motion.div
       initial={{ opacity: 0, y: 28 }}
@@ -47,89 +69,63 @@ function ConceptCard({
       transition={{ duration: 0.5, delay: 0.1 + index * 0.12 }}
       className="group bg-[#0f0f1e] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/[0.1] transition-all duration-300 hover:shadow-[0_8px_50px_rgba(0,0,0,0.3)]"
     >
-      {/* Visual panel */}
-      <div className="relative h-52 flex overflow-hidden">
-        {/* Before */}
-        <div
-          className="flex-1 flex flex-col items-center justify-center p-4 text-center border-r border-white/[0.04]"
-          style={{
-            background: `linear-gradient(135deg, ${concept.glowFrom}cc, #09091a)`,
-          }}
-        >
-          <span className="text-[9px] font-medium tracking-[0.18em] uppercase text-white/20 mb-3">
-            Before
-          </span>
-          {/* Abstract property shape */}
-          <div className="w-24 aspect-[4/3] relative mx-auto">
-            <div className="absolute inset-0 border border-white/[0.08] rounded bg-white/[0.015]" />
-            <div className="absolute top-2 left-2 right-2 bottom-7 bg-white/[0.03] rounded-sm" />
-            <div className="absolute bottom-0 left-2 right-2 h-6 border border-dashed border-white/[0.07] rounded-sm flex items-center justify-center">
-              <span className="text-[7px] text-white/20">unused</span>
+      {/* Header */}
+      <div
+        className="px-5 pt-5 pb-4 border-b border-white/[0.04]"
+        style={{ background: `linear-gradient(135deg, ${concept.glowFrom}cc, #09091a)` }}
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <div
+            className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+            style={{
+              backgroundColor: concept.accent + "18",
+              border: `1px solid ${concept.accent}30`,
+              color: concept.accent,
+            }}
+          >
+            <Icon size={17} />
+          </div>
+          <div>
+            <h3 className="font-semibold text-white text-sm leading-snug">{concept.label}</h3>
+            <p className="text-[9px] text-white/25 mt-0.5">{concept.subtitle}</p>
+          </div>
+        </div>
+
+        {/* Score bars */}
+        <div className="space-y-2 mt-4">
+          {concept.bands.map((band) => (
+            <div key={band.label} className="flex items-center gap-2.5">
+              <span
+                className="text-[10px] w-20 flex-shrink-0"
+                style={{ color: band.active ? concept.accent + "cc" : "#ffffff20" }}
+              >
+                {band.label}
+              </span>
+              <div className="flex-1 h-1.5 rounded-full bg-white/[0.04] overflow-hidden">
+                {band.pts > 0 && (
+                  <div
+                    className="h-full rounded-full"
+                    style={{
+                      width: `${(band.pts / 30) * 100}%`,
+                      backgroundColor: band.active ? concept.accent : "#ffffff10",
+                    }}
+                  />
+                )}
+              </div>
+              <span
+                className="text-[10px] w-8 text-right flex-shrink-0 tabular-nums"
+                style={{ color: band.active && band.pts > 0 ? concept.accent + "99" : "#ffffff15" }}
+              >
+                {band.pts > 0 ? `+${band.pts}` : "—"}
+              </span>
             </div>
-          </div>
-          <p className="text-[9px] text-white/20 mt-3 leading-tight">{concept.before}</p>
-        </div>
-
-        {/* Arrow badge */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#0f0f1e] border border-white/[0.06] flex items-center justify-center z-10">
-          <ArrowRight size={11} className="text-white/25" />
-        </div>
-
-        {/* After */}
-        <div
-          className="flex-1 flex flex-col items-center justify-center p-4 text-center"
-          style={{
-            background: `linear-gradient(135deg, ${concept.glowFrom}55, #0f0f1e)`,
-          }}
-        >
-          <span
-            className="text-[9px] font-medium tracking-[0.18em] uppercase mb-3"
-            style={{ color: concept.accent + "80" }}
-          >
-            After
-          </span>
-          <div className="w-24 aspect-[4/3] relative mx-auto">
-            <div
-              className="absolute inset-0 border rounded"
-              style={{
-                borderColor: concept.accent + "30",
-                backgroundColor: concept.accent + "06",
-              }}
-            />
-            <div className="absolute top-2 left-2 right-[42%] bottom-7 bg-white/[0.03] rounded-sm" />
-            <div
-              className="absolute top-2 right-2 left-[60%] bottom-0 rounded-sm border"
-              style={{
-                borderColor: concept.accent + "45",
-                backgroundColor: concept.accent + "09",
-              }}
-            />
-            <div
-              className="absolute top-2 right-2 w-2 h-2 rounded-full"
-              style={{ backgroundColor: concept.accent }}
-            />
-          </div>
-          <p
-            className="text-[9px] mt-3 leading-tight"
-            style={{ color: concept.accent + "bb" }}
-          >
-            {concept.after}
-          </p>
+          ))}
         </div>
       </div>
 
-      {/* Card footer */}
-      <div className="px-5 py-4 border-t border-white/[0.04]">
-        <div className="flex items-start justify-between gap-2">
-          <div>
-            <h3 className="font-semibold text-white text-sm mb-0.5">{concept.label}</h3>
-            <p className="text-[#48489a] text-xs">{concept.subtitle}</p>
-          </div>
-          <div className="flex items-center gap-1 text-[10px] text-[#48489a] whitespace-nowrap">
-            <Eye size={11} />
-            Concept
-          </div>
-        </div>
+      {/* Footer */}
+      <div className="px-5 py-4">
+        <p className="text-[11px] text-[#4a4a80] leading-relaxed">{concept.detail}</p>
       </div>
     </motion.div>
   );
@@ -153,32 +149,62 @@ export default function Visualisations() {
           className="text-center mb-16"
         >
           <p className="text-dlx-gold text-xs font-medium tracking-[0.2em] uppercase mb-4">
-            Opportunity Concepts
+            How We Score
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            Seeing the potential
+            The summer cooling score
           </h2>
           <p className="text-[#6060a0] text-base max-w-2xl mx-auto">
-            Every property is different. Our concept visuals help homeowners see what
-            might be possible — making abstract ideas tangible and real.
+            Every property we contact has been assessed against a structured scoring model
+            built from publicly available EPC and property data. Here&apos;s what goes into it.
           </p>
         </motion.div>
 
-        {/* Cards */}
+        {/* Score cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {concepts.map((concept, i) => (
-            <ConceptCard key={concept.label} concept={concept} index={i} inView={inView} />
+            <ScoreCard key={concept.label} concept={concept} index={i} inView={inView} />
           ))}
         </div>
+
+        {/* Band legend */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="bg-[#0f0f1e] border border-white/[0.06] rounded-2xl p-6"
+        >
+          <p className="text-xs text-[#6060a0] text-center mb-5 tracking-wide uppercase font-medium">Score bands (0–100)</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { band: "A — Strong lead", range: "70–100", color: "#c9a84c" },
+              { band: "B — Good lead", range: "50–69", color: "#7b9aff" },
+              { band: "C — Possible lead", range: "30–49", color: "#5edcb4" },
+              { band: "D — Poor fit", range: "0–29", color: "#444460" },
+            ].map((b) => (
+              <div key={b.band} className="flex items-center gap-3">
+                <div
+                  className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: b.color }}
+                />
+                <div>
+                  <p className="text-xs font-medium text-white/70">{b.band}</p>
+                  <p className="text-[10px] text-[#3a3a60]">{b.range} pts</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center text-xs text-[#3a3a60]"
+          transition={{ duration: 0.5, delay: 0.65 }}
+          className="text-center text-xs text-[#3a3a60] mt-6"
         >
-          All visuals are illustrative concept examples only. Actual outcomes vary and are
-          subject to planning, site conditions, and other constraints.
+          Scores are based on publicly available EPC and Land Registry data only. They are
+          indicative, not a professional assessment. A qualified professional should inspect
+          the property before any decisions are made.
         </motion.p>
       </div>
     </section>

@@ -2,33 +2,33 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { TrendingUp, Banknote, Home, Lightbulb, MessageCircle } from "lucide-react";
+import { TrendingUp, Thermometer, Home, Lightbulb, MessageCircle } from "lucide-react";
 
 const reasons = [
   {
-    icon: Banknote,
-    title: "Curious about what their land could be worth",
-    desc: "Many homeowners have never had their full plot assessed. We help put a clearer picture on what might be possible — with no commitment required.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Interested in exploring development potential",
-    desc: "Whether it's a garden room, plot split, or understanding the local planning context — we help open that conversation.",
-  },
-  {
-    icon: Home,
-    title: "Considering selling part of their garden",
-    desc: "For some homeowners, separating a portion of land can unlock significant value without having to move or fully downsize.",
+    icon: Thermometer,
+    title: "Their home was uncomfortable last summer",
+    desc: "Too hot to sleep, work, or relax. Many homeowners manage with fans, not realising there may be a better long-term answer specific to their property.",
   },
   {
     icon: Lightbulb,
-    title: "Wanting ideas to increase property value",
-    desc: "A fresh perspective on your property can reveal options you hadn't considered. That's exactly what we're here to provide.",
+    title: "Wondering if AC would actually work for them",
+    desc: "Not sure if it's worth it, where a unit would go, or whether planning or leasehold constraints apply. The free check answers these questions honestly.",
+  },
+  {
+    icon: TrendingUp,
+    title: "They've seen their EPC and want to understand it",
+    desc: "A D, E, F, or G rating can signal a real comfort gap. We explain what it means in practice for summer heat — not just energy bills.",
+  },
+  {
+    icon: Home,
+    title: "They have an older or terraced property",
+    desc: "Older and terraced homes can be particularly difficult to cool naturally. A targeted assessment shows whether passive improvements or a proper system makes more sense.",
   },
   {
     icon: MessageCircle,
-    title: "Looking for a no-pressure conversation",
-    desc: "We're not here to push anyone into a decision. If you're simply curious, that's reason enough to get in touch.",
+    title: "Looking for honest advice, not a sales pitch",
+    desc: "If proper cooling doesn't make sense for the property, we say so. There is no pressure to buy anything at any stage.",
   },
 ];
 
@@ -49,17 +49,17 @@ export default function WhyContact() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-dlx-gold text-xs font-medium tracking-[0.2em] uppercase mb-4">
-              Motivation
+              Reasons
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
               Why homeowners
               <br />
-              <span className="text-dlx-gold">contact us</span>
+              <span className="text-dlx-gold">request the check</span>
             </h2>
             <p className="text-[#6060a0] text-base leading-relaxed mb-8">
-              People reach out for all sorts of reasons. Most simply want to understand
-              what their property could be worth with a different approach — and that&apos;s
-              exactly what we&apos;re here to explore together.
+              People get in touch for different reasons. Most just want to understand
+              what their options are — and whether proper cooling actually makes sense
+              for their specific property.
             </p>
             <button
               onClick={() =>
@@ -67,7 +67,7 @@ export default function WhyContact() {
               }
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-dlx-gold/[0.08] border border-dlx-gold/[0.22] text-dlx-gold text-sm font-medium hover:bg-dlx-gold/[0.14] transition-all duration-200"
             >
-              Start a conversation
+              Request your free check
             </button>
           </motion.div>
 

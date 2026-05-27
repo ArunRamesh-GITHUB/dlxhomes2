@@ -10,7 +10,7 @@ type FormData = {
   phone: string;
   postcode: string;
   message: string;
-  receivedPostcard: boolean;
+  receivedLetter: boolean;
 };
 
 const inputClass =
@@ -26,7 +26,7 @@ export default function ContactForm() {
     phone: "",
     postcode: "",
     message: "",
-    receivedPostcard: false,
+    receivedLetter: false,
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -68,11 +68,11 @@ export default function ContactForm() {
             Get in Touch
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            Request your free property review
+            Request your free cooling check
           </h2>
           <p className="text-[#6060a0] text-base max-w-xl mx-auto">
-            Tell us about your property and we&apos;ll be in touch to discuss what
-            opportunities might exist. No obligation, no pressure.
+            Tell us about your property and we&apos;ll be in touch to arrange your
+            Free Home Cooling Readiness Check. No cost, no obligation.
           </p>
         </motion.div>
 
@@ -89,11 +89,11 @@ export default function ContactForm() {
                 <CheckCircle2 size={28} className="text-dlx-gold" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">
-                Thank you for reaching out
+                Thank you — we&apos;ll be in touch shortly
               </h3>
               <p className="text-[#6060a0] text-base max-w-md mx-auto leading-relaxed">
-                We&apos;ve received your enquiry and will review it carefully. If your
-                property looks like a strong fit, we&apos;ll be in touch shortly.
+                We&apos;ve received your request for a Free Home Cooling Readiness Check.
+                We&apos;ll review your property details and contact you to arrange the next step.
               </p>
             </div>
           ) : (
@@ -173,30 +173,30 @@ export default function ContactForm() {
                   value={form.message}
                   onChange={handleChange}
                   rows={4}
-                  placeholder="E.g. I have a large rear garden / side plot / corner plot and would like to understand its potential..."
+                  placeholder="E.g. My home gets very hot in summer / I have an older terraced house / I received your letter and want to find out more..."
                   className={`${inputClass} resize-none`}
                 />
               </div>
 
-              {/* Postcard checkbox */}
+              {/* Letter checkbox */}
               <div className="mb-8">
                 <label className="flex items-center gap-3 cursor-pointer group">
                   <div className="relative flex-shrink-0">
                     <input
                       type="checkbox"
-                      name="receivedPostcard"
-                      checked={form.receivedPostcard}
+                      name="receivedLetter"
+                      checked={form.receivedLetter}
                       onChange={handleChange}
                       className="sr-only"
                     />
                     <div
                       className={`w-5 h-5 rounded-md border transition-all duration-200 flex items-center justify-center ${
-                        form.receivedPostcard
+                        form.receivedLetter
                           ? "bg-dlx-gold border-dlx-gold"
                           : "border-white/[0.18] bg-white/[0.03] group-hover:border-white/30"
                       }`}
                     >
-                      {form.receivedPostcard && (
+                      {form.receivedLetter && (
                         <svg
                           width="10"
                           height="8"
@@ -216,7 +216,7 @@ export default function ContactForm() {
                     </div>
                   </div>
                   <span className="text-sm text-[#7878a0] group-hover:text-white/70 transition-colors">
-                    I received a postcard from DLX ROI
+                    I received a letter from DLX ROI
                   </span>
                 </label>
               </div>

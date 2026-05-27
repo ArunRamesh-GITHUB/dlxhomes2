@@ -7,23 +7,23 @@ import { Shield, UserCheck, MapPin, Clock, Lock, Search } from "lucide-react";
 const points = [
   {
     icon: Shield,
-    title: "No obligation whatsoever",
-    desc: "Enquiring with us carries zero obligation. You're simply starting a conversation to understand your options — at no cost and with no strings attached.",
+    title: "The check is completely free",
+    desc: "There is no cost at any stage. The Home Cooling Readiness Check is free — and there is no obligation to proceed with anything afterwards.",
   },
   {
     icon: UserCheck,
-    title: "Professional, respectful approach",
-    desc: "We operate with discretion and respect. We're not cold-calling salespeople — we're property opportunity specialists who take our reputation seriously.",
+    title: "Honest, professional advice",
+    desc: "If proper cooling doesn't make sense for your property, we'll tell you. We're not here to sell — we're here to give you an honest assessment.",
   },
   {
     icon: MapPin,
-    title: "UK-focused operations",
-    desc: "We work exclusively within the United Kingdom, with a clear understanding of UK planning policy and the residential property market.",
+    title: "UK homes only",
+    desc: "We work exclusively with residential properties in England and Wales, with a clear understanding of UK planning policy, conservation areas, and leasehold constraints.",
   },
   {
     icon: Clock,
     title: "Selected properties only",
-    desc: "We don't contact every home on a street. Our approach is considered and targeted — we only reach out when there's genuine reason to do so.",
+    desc: "We don't contact every home in an area. We only reach out to properties where the public EPC and property data suggests a genuine cooling case.",
   },
   {
     icon: Lock,
@@ -32,8 +32,8 @@ const points = [
   },
   {
     icon: Search,
-    title: "Careful, considered analysis",
-    desc: "We thoroughly review every opportunity before reaching out. Our assessments are based on genuine analysis — not mass speculation or automated guesswork.",
+    title: "Data-driven, not guesswork",
+    desc: "Our selection is based on publicly available EPC and Land Registry data — structured, scored, and filtered. Not speculation or mass-blast outreach.",
   },
 ];
 
@@ -58,11 +58,11 @@ export default function Trust() {
             Our Commitment
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5">
-            Professional by design
+            What you can expect from us
           </h2>
           <p className="text-[#6060a0] text-base max-w-2xl mx-auto">
-            We understand that receiving unexpected contact about your property can feel
-            unusual. Here&apos;s what you can always expect from us.
+            Receiving a letter about your home can feel unexpected. Here&apos;s what you
+            can always count on from DLX ROI — no pressure, no guesswork.
           </p>
         </motion.div>
 

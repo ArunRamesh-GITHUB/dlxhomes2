@@ -3,44 +3,44 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Trees,
-  CornerRightDown,
-  LayoutGrid,
-  Maximize2,
-  Building2,
-  Ruler,
+  Zap,
+  TrendingUp,
+  Calendar,
+  Home,
+  ShieldOff,
+  Banknote,
 } from "lucide-react";
 
 const items = [
   {
-    icon: Trees,
-    title: "Large Rear Gardens",
-    desc: "Properties where the rear garden offers substantial space — potentially enough to be split, developed, or used for a significant outbuilding or garden room.",
+    icon: Zap,
+    title: "Poor EPC Ratings (D–G)",
+    desc: "Properties with energy performance ratings of D, E, F, or G are more likely to have a comfort gap between current efficiency and what's possible — making a cooling review worthwhile.",
   },
   {
-    icon: CornerRightDown,
-    title: "Corner Plots",
-    desc: "Corner-positioned homes often have additional land wrapping the side and rear, offering surprising development and access opportunities.",
+    icon: TrendingUp,
+    title: "High Improvement Potential",
+    desc: "Homes where the EPC shows a large gap between current and potential rating. A significant improvement gap often signals underperforming insulation, ventilation, or glazing.",
   },
   {
-    icon: LayoutGrid,
-    title: "Side Land & Passageways",
-    desc: "Wide side access or additional side plots adjacent to the main property — sometimes substantial enough to be used or separated independently.",
+    icon: Calendar,
+    title: "Older Construction",
+    desc: "Properties built before 1980 pre-date modern insulation and ventilation standards. Older homes can be particularly sensitive to summer heat and may have more to gain from a targeted review.",
   },
   {
-    icon: Maximize2,
-    title: "Wide Frontage Plots",
-    desc: "Properties sitting on unusually wide plots may have scope for garden divisions, additional driveways, or potential plot subdivision.",
+    icon: Home,
+    title: "Terraced & Semi-Detached Homes",
+    desc: "Terraced and semi-detached properties can be harder to cool naturally due to limited external wall exposure and restricted airflow — especially in older builds.",
   },
   {
-    icon: Building2,
-    title: "Infill Opportunities",
-    desc: "Gaps between established properties or at the end of a terrace can sometimes accommodate a new dwelling or purpose-built structure.",
+    icon: ShieldOff,
+    title: "No Restrictive Planning Constraints",
+    desc: "Properties not in conservation areas, flood zones, or near listed buildings, where AC or heat pump installations are more likely to be straightforward.",
   },
   {
-    icon: Ruler,
-    title: "Extension & Garden Room Potential",
-    desc: "Homes with clear space to extend outward, or land that could accommodate a garden office, studio, or similar purpose-built structure.",
+    icon: Banknote,
+    title: "Mid-Range Property Values",
+    desc: "Homes priced at or below the local sector median — where a cooling upgrade can represent strong value relative to the overall property.",
   },
 ];
 
@@ -68,8 +68,8 @@ export default function WhatWeLookFor() {
             What we look for
           </h2>
           <p className="text-[#6060a0] text-base max-w-2xl mx-auto">
-            We focus on residential properties with specific characteristics that suggest
-            untapped potential. Here&apos;s what catches our attention.
+            We use publicly available EPC and property data to identify homes that may benefit
+            most from a cooling readiness review. Here&apos;s what our analysis looks for.
           </p>
         </motion.div>
 

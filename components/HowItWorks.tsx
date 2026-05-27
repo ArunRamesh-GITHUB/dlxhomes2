@@ -2,38 +2,38 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Search, BarChart2, ImageIcon, MessageSquare, Handshake } from "lucide-react";
+import { Search, BarChart2, MessageSquare, ImageIcon, Handshake } from "lucide-react";
 
 const steps = [
   {
     icon: Search,
     num: "01",
-    title: "We Identify Opportunities",
-    desc: "Using detailed analysis, we pinpoint residential properties across the UK that appear to have underused outdoor space, side plots, or development potential.",
+    title: "We Analyse the Data",
+    desc: "Using publicly available EPC and Land Registry data, we identify UK homes that may be harder to cool naturally — based on ratings, age, and property type.",
   },
   {
     icon: BarChart2,
     num: "02",
-    title: "We Assess the Potential",
-    desc: "Our team reviews the property in detail — looking at plot size, access, local planning context, and what kind of opportunity may exist.",
-  },
-  {
-    icon: ImageIcon,
-    num: "03",
-    title: "We Create Visualisations",
-    desc: "We produce tailored concept visuals and a personalised opportunity report showing what might be achievable with the space.",
+    title: "We Score Each Property",
+    desc: "Our summer cooling score assesses EPC rating, improvement potential, construction age, property type, and planning context to find the strongest candidates.",
   },
   {
     icon: MessageSquare,
+    num: "03",
+    title: "We Send a Letter",
+    desc: "Selected homeowners receive a personalised letter explaining what the public data suggests and offering a Free Home Cooling Readiness Check.",
+  },
+  {
+    icon: ImageIcon,
     num: "04",
-    title: "Homeowner Gets in Touch",
-    desc: "You receive our materials and, if you're curious, you choose to reach out. There's no pressure — we're simply opening a conversation.",
+    title: "You Request a Check",
+    desc: "If you're curious, you request the free check — no obligation. We look at your property specifically, not a generic assessment.",
   },
   {
     icon: Handshake,
     num: "05",
-    title: "We Discuss Next Steps",
-    desc: "If there's mutual interest, we explore what the opportunity could look like and what your options might be. No hard sell, ever.",
+    title: "We Assess Your Options",
+    desc: "We honestly assess what suits your property: passive cooling, ventilation improvements, solar shading, or an AC / air-to-air heat pump system. If it isn't right, we'll say so.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function HowItWorks() {
             How it works
           </h2>
           <p className="text-[#6060a0] text-base max-w-xl mx-auto">
-            A clear, transparent process — from identification to conversation.
+            From data analysis to an honest assessment of your home — a clear, no-pressure process.
           </p>
         </motion.div>
 

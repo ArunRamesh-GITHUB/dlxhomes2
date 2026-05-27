@@ -3,8 +3,8 @@ import { Mail, Phone } from "lucide-react";
 const footerLinks = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "What We Look For", href: "#what-we-look-for" },
-  { label: "Why Contact Us", href: "#why-contact" },
-  { label: "Request a Review", href: "#contact" },
+  { label: "Why Request a Check", href: "#why-contact" },
+  { label: "Request Free Cooling Check", href: "#contact" },
   { label: "FAQs", href: "#faq" },
 ];
 
@@ -19,8 +19,8 @@ export default function Footer() {
               DLX <span className="text-dlx-gold">ROI</span>
             </div>
             <p className="text-[#505078] text-sm leading-relaxed max-w-xs">
-              Identifying hidden property value across the UK. Premium analysis,
-              thoughtful outreach, and no-pressure conversations.
+              Free Home Cooling Readiness Checks for UK homeowners. EPC-data driven,
+              no-obligation, and honest — if cooling isn&apos;t right, we&apos;ll say so.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} DLX ROI. All rights reserved. Registered in England &amp; Wales.
           </p>
           <p className="text-xs text-[#28283e] text-right">
-            All opportunity assessments are indicative only. Nothing on this site constitutes planning or legal advice.
+            All assessments are based on publicly available EPC data and are indicative only. Nothing on this site constitutes a survey, quote, or professional recommendation.
           </p>
         </div>
       </div>

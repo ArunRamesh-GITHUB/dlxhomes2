@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, Thermometer } from "lucide-react";
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -31,8 +31,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-dlx-gold/25 bg-dlx-gold/[0.06] text-dlx-gold text-xs font-medium tracking-[0.14em] uppercase mb-8"
         >
-          <MapPin size={11} />
-          UK Property Opportunity Specialists
+          <Thermometer size={11} />
+          UK Home Cooling Specialists
         </motion.div>
 
         {/* Headline */}
@@ -42,13 +42,13 @@ export default function Hero() {
           transition={{ duration: 0.65, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-bold tracking-tight leading-[1.08] mb-6"
         >
-          Your property may hold{" "}
+          Did your home get{" "}
           <span className="relative inline-block text-dlx-gold">
-            hidden value
+            too hot
             <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dlx-gold/50 to-transparent" />
           </span>
           <br />
-          <span className="text-[#888898]">you haven&apos;t considered.</span>
+          <span className="text-[#888898]">this summer?</span>
         </motion.h1>
 
         {/* Sub-copy */}
@@ -58,9 +58,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.36 }}
           className="text-base sm:text-lg text-[#6868a0] max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          DLX ROI identifies residential properties across the UK with untapped outdoor
-          space, side plots, corner plots, and land opportunity. We create tailored concept
-          visuals and opportunity reports — so you can see what might be possible.
+          DLX ROI analyses publicly available EPC and property data to identify homes
+          that may be harder to cool naturally. We offer a free Home Cooling Readiness
+          Check — so you can understand your real options before the next heatwave.
         </motion.p>
 
         {/* CTAs */}
@@ -74,7 +74,7 @@ export default function Hero() {
             onClick={() => scrollTo("contact")}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-dlx-gold text-[#07070f] font-semibold text-base hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_32px_rgba(201,168,76,0.28)] hover:shadow-[0_0_44px_rgba(201,168,76,0.42)]"
           >
-            Request Free Property Review
+            Request Free Cooling Check
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform duration-200"
@@ -96,9 +96,9 @@ export default function Hero() {
           className="mt-16 flex flex-wrap justify-center items-center gap-x-7 gap-y-3 text-xs text-[#50506a]"
         >
           {[
-            "No obligation to proceed",
-            "UK-focused approach",
-            "Professional & respectful",
+            "Free check, no obligation",
+            "EPC-data driven",
+            "UK homes only",
             "Selected properties only",
           ].map((item) => (
             <div key={item} className="flex items-center gap-2">

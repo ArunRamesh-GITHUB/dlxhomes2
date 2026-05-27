@@ -9,11 +9,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DLX ROI — Unlock Your Property's Hidden Potential",
+  title: "DLX ROI — Free Home Cooling Readiness Check",
   description:
-    "DLX ROI identifies UK homes with underused outdoor space, side plots, corner plots, and hidden development potential. Request a free, no-obligation property review today.",
+    "DLX ROI uses EPC and property data to identify UK homes that may be harder to cool naturally. Request a free, no-obligation Home Cooling Readiness Check today.",
   keywords:
-    "property development, garden development, plot split, land value, UK property opportunity",
+    "home cooling, AC installation, air conditioning UK, heat pump, EPC rating, summer heat, home comfort",
 };
 
 export default function RootLayout({

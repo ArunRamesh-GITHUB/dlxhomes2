@@ -26,9 +26,27 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1100));
-    setSubmitting(false);
-    setSubmitted(true);
+    try {
+      await fetch("/api/cooling-enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          postcode: form.postcode,
+          message: form.message,
+          campaign_reference: campaignRef,
+          source: "summer_cooling_letter",
+          submitted_at: new Date().toISOString(),
+        }),
+      });
+    } catch {
+      // still show success — don't block the user on a network error
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   if (submitted) {

@@ -25,11 +25,11 @@ export default async function CoolingPage({
   const { ref = "" } = await searchParams;
 
   return (
-    <div className="min-h-screen bg-[#07070f] text-[#f0f0f5]">
+    <div className="min-h-screen bg-[#060e1e] text-[#f0f4f8]">
       {/* Background glows */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-dlx-gold/[0.03] blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-900/[0.05] blur-[100px]" />
+        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-dlx-gold/[0.05] blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-600/[0.06] blur-[100px]" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 py-14 sm:py-20">
@@ -40,7 +40,7 @@ export default async function CoolingPage({
 
         {/* Heading */}
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-dlx-gold/25 bg-dlx-gold/[0.06] text-dlx-gold text-xs font-medium tracking-[0.14em] uppercase mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-dlx-gold/30 bg-dlx-gold/[0.08] text-dlx-gold text-xs font-medium tracking-[0.14em] uppercase mb-6">
             <Thermometer size={11} />
             Free Home Cooling Readiness Check
           </div>
@@ -49,7 +49,7 @@ export default async function CoolingPage({
             <br />
             <span className="text-dlx-gold">during the recent heatwave?</span>
           </h1>
-          <p className="text-[#6868a0] text-base sm:text-lg leading-relaxed max-w-2xl">
+          <p className="text-[#4a6e8f] text-base sm:text-lg leading-relaxed max-w-2xl">
             Fans move warm air around. They do not properly cool the room.
             We offer a free, no-obligation check to find out what the right
             long-term answer is for your specific property.
@@ -59,7 +59,7 @@ export default async function CoolingPage({
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           {/* What the check covers */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-[#0f0f1e] border border-white/[0.06] rounded-2xl p-6">
+            <div className="bg-[#0c1d32] border border-white/[0.08] rounded-2xl p-6">
               <h2 className="font-semibold text-white text-sm mb-4">
                 What the free check covers
               </h2>
@@ -70,14 +70,14 @@ export default async function CoolingPage({
                       size={14}
                       className="text-dlx-gold flex-shrink-0 mt-0.5"
                     />
-                    <span className="text-[#58589a] text-xs leading-relaxed">{item}</span>
+                    <span className="text-[#4a6e8f] text-xs leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-[#0f0f1e] border border-white/[0.06] rounded-2xl p-6">
-              <p className="text-xs text-[#5050a0] leading-relaxed">
+            <div className="bg-[#0c1d32] border border-white/[0.08] rounded-2xl p-6">
+              <p className="text-xs text-[#3d6080] leading-relaxed">
                 <strong className="text-white/60">Small print:</strong> This is based on
                 publicly available EPC data and is not a survey, valuation, quote, guarantee,
                 or professional recommendation. Cooling, AC, or heat pump installations may
@@ -89,7 +89,7 @@ export default async function CoolingPage({
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3 bg-[#0f0f1e] border border-white/[0.07] rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.4)]">
+          <div className="lg:col-span-3 bg-[#0c1d32] border border-white/[0.09] rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.4)]">
             <CoolingForm campaignRef={ref} />
           </div>
         </div>

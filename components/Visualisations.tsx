@@ -9,8 +9,8 @@ const concepts = [
     label: "EPC Rating & Improvement Gap",
     subtitle: "How we score cooling potential",
     icon: Zap,
-    accent: "#c9a84c",
-    glowFrom: "#1a1200",
+    accent: "#f0a500",
+    glowFrom: "#1a0e00",
     bands: [
       { label: "G", pts: 30, active: true },
       { label: "F", pts: 25, active: true },
@@ -24,8 +24,8 @@ const concepts = [
     label: "Property Type & Age",
     subtitle: "Construction factors we assess",
     icon: Thermometer,
-    accent: "#7b9aff",
-    glowFrom: "#00051a",
+    accent: "#60a5fa",
+    glowFrom: "#001228",
     bands: [
       { label: "Pre-1930", pts: 15, active: true },
       { label: "Pre-1980", pts: 15, active: true },
@@ -39,8 +39,8 @@ const concepts = [
     label: "Planning & Data Confidence",
     subtitle: "Flags that affect eligibility",
     icon: Wind,
-    accent: "#5edcb4",
-    glowFrom: "#001a0e",
+    accent: "#34d399",
+    glowFrom: "#001a10",
     bands: [
       { label: "No constraints", pts: 5, active: true },
       { label: "High confidence", pts: 10, active: true },
@@ -67,19 +67,19 @@ function ScoreCard({
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: 0.1 + index * 0.12 }}
-      className="group bg-[#0f0f1e] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/[0.1] transition-all duration-300 hover:shadow-[0_8px_50px_rgba(0,0,0,0.3)]"
+      className="group bg-[#0c1d32] border border-white/[0.08] rounded-2xl overflow-hidden hover:border-white/[0.14] transition-all duration-300 hover:shadow-[0_8px_50px_rgba(0,0,0,0.3)]"
     >
       {/* Header */}
       <div
-        className="px-5 pt-5 pb-4 border-b border-white/[0.04]"
-        style={{ background: `linear-gradient(135deg, ${concept.glowFrom}cc, #09091a)` }}
+        className="px-5 pt-5 pb-4 border-b border-white/[0.06]"
+        style={{ background: `linear-gradient(135deg, ${concept.glowFrom}cc, #091828)` }}
       >
         <div className="flex items-center gap-3 mb-3">
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
             style={{
               backgroundColor: concept.accent + "18",
-              border: `1px solid ${concept.accent}30`,
+              border: `1px solid ${concept.accent}35`,
               color: concept.accent,
             }}
           >
@@ -101,7 +101,7 @@ function ScoreCard({
               >
                 {band.label}
               </span>
-              <div className="flex-1 h-1.5 rounded-full bg-white/[0.04] overflow-hidden">
+              <div className="flex-1 h-1.5 rounded-full bg-white/[0.05] overflow-hidden">
                 {band.pts > 0 && (
                   <div
                     className="h-full rounded-full"
@@ -125,7 +125,7 @@ function ScoreCard({
 
       {/* Footer */}
       <div className="px-5 py-4">
-        <p className="text-[11px] text-[#4a4a80] leading-relaxed">{concept.detail}</p>
+        <p className="text-[11px] text-[#4a6e8f] leading-relaxed">{concept.detail}</p>
       </div>
     </motion.div>
   );
@@ -137,8 +137,8 @@ export default function Visualisations() {
 
   return (
     <section id="visualisations" className="py-24 sm:py-32 relative">
-      <div className="absolute inset-0 bg-[#07070f]" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-dlx-gold/[0.025] blur-[110px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[#060e1e]" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-dlx-gold/[0.04] blur-[110px] pointer-events-none" />
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
         {/* Heading */}
@@ -154,7 +154,7 @@ export default function Visualisations() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5">
             The summer cooling score
           </h2>
-          <p className="text-[#6060a0] text-base max-w-2xl mx-auto">
+          <p className="text-[#4a6e8f] text-base max-w-2xl mx-auto">
             Every property we contact has been assessed against a structured scoring model
             built from publicly available EPC and property data. Here&apos;s what goes into it.
           </p>
@@ -172,15 +172,15 @@ export default function Visualisations() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="bg-[#0f0f1e] border border-white/[0.06] rounded-2xl p-6"
+          className="bg-[#0c1d32] border border-white/[0.08] rounded-2xl p-6"
         >
-          <p className="text-xs text-[#6060a0] text-center mb-5 tracking-wide uppercase font-medium">Score bands (0–100)</p>
+          <p className="text-xs text-[#4a6e8f] text-center mb-5 tracking-wide uppercase font-medium">Score bands (0–100)</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[
-              { band: "A — Strong lead", range: "70–100", color: "#c9a84c" },
-              { band: "B — Good lead", range: "50–69", color: "#7b9aff" },
-              { band: "C — Possible lead", range: "30–49", color: "#5edcb4" },
-              { band: "D — Poor fit", range: "0–29", color: "#444460" },
+              { band: "A — Strong lead", range: "70–100", color: "#f0a500" },
+              { band: "B — Good lead", range: "50–69", color: "#60a5fa" },
+              { band: "C — Possible lead", range: "30–49", color: "#34d399" },
+              { band: "D — Poor fit", range: "0–29", color: "#2a4462" },
             ].map((b) => (
               <div key={b.band} className="flex items-center gap-3">
                 <div
@@ -189,7 +189,7 @@ export default function Visualisations() {
                 />
                 <div>
                   <p className="text-xs font-medium text-white/70">{b.band}</p>
-                  <p className="text-[10px] text-[#3a3a60]">{b.range} pts</p>
+                  <p className="text-[10px] text-[#2e5070]">{b.range} pts</p>
                 </div>
               </div>
             ))}
@@ -200,7 +200,7 @@ export default function Visualisations() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.65 }}
-          className="text-center text-xs text-[#3a3a60] mt-6"
+          className="text-center text-xs text-[#2e5070] mt-6"
         >
           Scores are based on publicly available EPC and Land Registry data only. They are
           indicative, not a professional assessment. A qualified professional should inspect

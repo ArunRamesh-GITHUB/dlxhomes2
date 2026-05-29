@@ -50,8 +50,8 @@ export default function WhatWeLookFor() {
 
   return (
     <section id="what-we-look-for" className="py-24 sm:py-32 relative">
-      <div className="absolute inset-0 bg-[#07070f]" />
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-dlx-gold/[0.025] blur-[90px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[#060e1e]" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-dlx-gold/[0.04] blur-[90px] pointer-events-none" />
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
         {/* Heading */}
@@ -67,7 +67,7 @@ export default function WhatWeLookFor() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5">
             What we look for
           </h2>
-          <p className="text-[#6060a0] text-base max-w-2xl mx-auto">
+          <p className="text-[#4a6e8f] text-base max-w-2xl mx-auto">
             We use publicly available EPC and property data to identify homes that may benefit
             most from a cooling readiness review. Here&apos;s what our analysis looks for.
           </p>
@@ -83,13 +83,13 @@ export default function WhatWeLookFor() {
                 initial={{ opacity: 0, y: 28 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.08 + i * 0.08 }}
-                className="group bg-[#0f0f1e] border border-white/[0.06] rounded-2xl p-6 hover:border-dlx-gold/[0.22] transition-all duration-300 hover:shadow-[0_4px_40px_rgba(201,168,76,0.07)] hover:-translate-y-0.5"
+                className="group bg-[#0c1d32] border border-white/[0.08] rounded-2xl p-6 hover:border-dlx-gold/[0.28] transition-all duration-300 hover:shadow-[0_4px_40px_rgba(240,165,0,0.09)] hover:-translate-y-0.5"
               >
-                <div className="w-12 h-12 rounded-xl bg-dlx-gold/[0.08] border border-dlx-gold/[0.14] flex items-center justify-center text-dlx-gold mb-5 group-hover:bg-dlx-gold/[0.13] transition-colors duration-200">
+                <div className="w-12 h-12 rounded-xl bg-dlx-gold/[0.10] border border-dlx-gold/[0.18] flex items-center justify-center text-dlx-gold mb-5 group-hover:bg-dlx-gold/[0.16] transition-colors duration-200">
                   <Icon size={22} />
                 </div>
                 <h3 className="font-semibold text-white text-base mb-2">{item.title}</h3>
-                <p className="text-[#60609a] text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-[#4a6e8f] text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             );
           })}

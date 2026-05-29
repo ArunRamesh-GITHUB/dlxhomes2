@@ -35,7 +35,7 @@ function FAQItem({ faq }: { faq: (typeof faqs)[0] }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-white/[0.05] last:border-0">
+    <div className="border-b border-white/[0.07] last:border-0">
       <button
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 py-5 text-left group"
@@ -47,8 +47,8 @@ function FAQItem({ faq }: { faq: (typeof faqs)[0] }) {
         <span
           className={`flex-shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-200 ${
             open
-              ? "border-dlx-gold/40 text-dlx-gold bg-dlx-gold/[0.06]"
-              : "border-white/[0.08] text-[#6060a0] group-hover:border-dlx-gold/25 group-hover:text-dlx-gold"
+              ? "border-dlx-gold/45 text-dlx-gold bg-dlx-gold/[0.08]"
+              : "border-white/[0.10] text-[#4a6e8f] group-hover:border-dlx-gold/30 group-hover:text-dlx-gold"
           }`}
         >
           {open ? <Minus size={12} /> : <Plus size={12} />}
@@ -63,7 +63,7 @@ function FAQItem({ faq }: { faq: (typeof faqs)[0] }) {
             transition={{ duration: 0.24, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-sm text-[#5e5e98] leading-relaxed">{faq.a}</p>
+            <p className="pb-5 text-sm text-[#4a6e8f] leading-relaxed">{faq.a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -77,7 +77,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="py-24 sm:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#07070f] via-[#0a0a18] to-[#07070f]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#060e1e] via-[#091828] to-[#060e1e]" />
 
       <div ref={ref} className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8">
         {/* Heading */}
@@ -93,7 +93,7 @@ export default function FAQ() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5">
             Frequently asked questions
           </h2>
-          <p className="text-[#6060a0] text-base">
+          <p className="text-[#4a6e8f] text-base">
             Common questions from homeowners who&apos;ve received our letter or come
             across DLX ROI.
           </p>
@@ -104,7 +104,7 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="bg-[#0f0f1e] border border-white/[0.06] rounded-2xl px-6 sm:px-8"
+          className="bg-[#0c1d32] border border-white/[0.08] rounded-2xl px-6 sm:px-8"
         >
           {faqs.map((faq, i) => (
             <FAQItem key={i} faq={faq} />
@@ -118,7 +118,7 @@ export default function FAQ() {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="mt-8 text-center"
         >
-          <p className="text-sm text-[#50509a] mb-3">
+          <p className="text-sm text-[#3d6080] mb-3">
             Still have a question not answered here?
           </p>
           <button

@@ -10,7 +10,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050509] border-t border-white/[0.04]">
+    <footer className="bg-[#040c1a] border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="text-xl font-bold tracking-tight text-white mb-3">
               DLX <span className="text-dlx-gold">ROI</span>
             </div>
-            <p className="text-[#505078] text-sm leading-relaxed max-w-xs">
+            <p className="text-[#3d6080] text-sm leading-relaxed max-w-xs">
               Free Home Cooling Readiness Checks for UK homeowners. EPC-data driven,
               no-obligation, and honest — if cooling isn&apos;t right, we&apos;ll say so.
             </p>
@@ -26,7 +26,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-xs font-semibold text-[#70709a] uppercase tracking-[0.15em] mb-4">
+            <h4 className="text-xs font-semibold text-[#5e82a0] uppercase tracking-[0.15em] mb-4">
               Navigation
             </h4>
             <ul className="space-y-2.5">
@@ -34,7 +34,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-[#52527a] hover:text-dlx-gold transition-colors duration-200"
+                    className="text-sm text-[#3d6080] hover:text-dlx-gold transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -45,23 +45,23 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-semibold text-[#70709a] uppercase tracking-[0.15em] mb-4">
+            <h4 className="text-xs font-semibold text-[#5e82a0] uppercase tracking-[0.15em] mb-4">
               Contact
             </h4>
             <ul className="space-y-3 mb-6">
               <li>
                 <a
-                  href="mailto:hello@dlxroi.co.uk"
-                  className="flex items-center gap-2.5 text-sm text-[#52527a] hover:text-dlx-gold transition-colors duration-200"
+                  href="mailto:hello@dlxhomes.com"
+                  className="flex items-center gap-2.5 text-sm text-[#3d6080] hover:text-dlx-gold transition-colors duration-200"
                 >
                   <Mail size={13} className="flex-shrink-0" />
-                  hello@dlxroi.co.uk
+                  hello@dlxhomes.com
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+441234567890"
-                  className="flex items-center gap-2.5 text-sm text-[#52527a] hover:text-dlx-gold transition-colors duration-200"
+                  className="flex items-center gap-2.5 text-sm text-[#3d6080] hover:text-dlx-gold transition-colors duration-200"
                 >
                   <Phone size={13} className="flex-shrink-0" />
                   +44 (0) 1234 567 890
@@ -71,19 +71,19 @@ export default function Footer() {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="text-xs text-[#3e3e60] hover:text-[#7070a0] transition-colors duration-200"
+                className="text-xs text-[#244060] hover:text-[#5e82a0] transition-colors duration-200"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="text-xs text-[#3e3e60] hover:text-[#7070a0] transition-colors duration-200"
+                className="text-xs text-[#244060] hover:text-[#5e82a0] transition-colors duration-200"
               >
                 Terms of Use
               </a>
               <a
                 href="#"
-                className="text-xs text-[#3e3e60] hover:text-[#7070a0] transition-colors duration-200"
+                className="text-xs text-[#244060] hover:text-[#5e82a0] transition-colors duration-200"
               >
                 Contact
               </a>
@@ -92,11 +92,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/[0.04] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <p className="text-xs text-[#32324e]">
+        <div className="border-t border-white/[0.05] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <p className="text-xs text-[#1e3852]">
             &copy; {new Date().getFullYear()} DLX ROI. All rights reserved. Registered in England &amp; Wales.
           </p>
-          <p className="text-xs text-[#28283e] text-right">
+          <p className="text-xs text-[#182e48] text-right">
             All assessments are based on publicly available EPC data and are indicative only. Nothing on this site constitutes a survey, quote, or professional recommendation.
           </p>
         </div>

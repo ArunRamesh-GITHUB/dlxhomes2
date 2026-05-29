@@ -35,7 +35,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#07070f]/90 backdrop-blur-md border-b border-white/[0.05] shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
+          ? "bg-[#060e1e]/92 backdrop-blur-md border-b border-white/[0.07] shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
           : "bg-transparent"
       }`}
     >
@@ -54,7 +54,7 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => handleLink(link.href)}
-              className="text-sm text-[#8888b0] hover:text-white transition-colors duration-200"
+              className="text-sm text-[#7a9ab5] hover:text-white transition-colors duration-200"
             >
               {link.label}
             </button>
@@ -64,7 +64,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <button
           onClick={() => handleLink("#contact")}
-          className="hidden md:inline-flex items-center px-5 py-2 text-sm font-semibold rounded-full bg-dlx-gold text-[#07070f] hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_20px_rgba(201,168,76,0.2)]"
+          className="hidden md:inline-flex items-center px-5 py-2 text-sm font-semibold rounded-full bg-dlx-gold text-[#060e1e] hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_20px_rgba(240,165,0,0.25)]"
         >
           Free Cooling Check
         </button>
@@ -87,21 +87,21 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22 }}
-            className="md:hidden overflow-hidden bg-[#0d0d1a]/95 backdrop-blur-md border-b border-white/[0.05]"
+            className="md:hidden overflow-hidden bg-[#0a1c30]/95 backdrop-blur-md border-b border-white/[0.07]"
           >
             <div className="px-5 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleLink(link.href)}
-                  className="text-left px-3 py-3 text-sm text-[#8888b0] hover:text-white hover:bg-white/[0.04] rounded-lg transition-all duration-150"
+                  className="text-left px-3 py-3 text-sm text-[#7a9ab5] hover:text-white hover:bg-white/[0.05] rounded-lg transition-all duration-150"
                 >
                   {link.label}
                 </button>
               ))}
               <button
                 onClick={() => handleLink("#contact")}
-                className="mt-3 px-5 py-3 text-sm font-semibold rounded-full bg-dlx-gold text-[#07070f] hover:bg-dlx-gold-light transition-all duration-200 text-center"
+                className="mt-3 px-5 py-3 text-sm font-semibold rounded-full bg-dlx-gold text-[#060e1e] hover:bg-dlx-gold-light transition-all duration-200 text-center"
               >
                 Free Cooling Check
               </button>

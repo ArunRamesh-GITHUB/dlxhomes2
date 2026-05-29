@@ -11,17 +11,17 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Base background */}
-      <div className="absolute inset-0 bg-[#07070f]" />
+      <div className="absolute inset-0 bg-[#060e1e]" />
 
-      {/* Radial gold glow */}
-      <div className="absolute top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-dlx-gold/[0.035] blur-[130px] pointer-events-none" />
-      <div className="absolute top-1/4 right-[-5%] w-[350px] h-[350px] rounded-full bg-blue-900/[0.07] blur-[100px] pointer-events-none" />
+      {/* Radial amber glow */}
+      <div className="absolute top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-dlx-gold/[0.06] blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/4 right-[-5%] w-[350px] h-[350px] rounded-full bg-blue-600/[0.08] blur-[100px] pointer-events-none" />
 
       {/* Subtle grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-[#07070f] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-[#060e1e] to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center">
         {/* Badge */}
@@ -29,7 +29,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-dlx-gold/25 bg-dlx-gold/[0.06] text-dlx-gold text-xs font-medium tracking-[0.14em] uppercase mb-8"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-dlx-gold/30 bg-dlx-gold/[0.08] text-dlx-gold text-xs font-medium tracking-[0.14em] uppercase mb-8"
         >
           <Thermometer size={11} />
           UK Home Cooling Specialists
@@ -45,10 +45,10 @@ export default function Hero() {
           Did your home get{" "}
           <span className="relative inline-block text-dlx-gold">
             too hot
-            <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dlx-gold/50 to-transparent" />
+            <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dlx-gold/60 to-transparent" />
           </span>
           <br />
-          <span className="text-[#888898]">this summer?</span>
+          <span className="text-[#94a3b8]">this summer?</span>
         </motion.h1>
 
         {/* Sub-copy */}
@@ -56,7 +56,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.36 }}
-          className="text-base sm:text-lg text-[#6868a0] max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-base sm:text-lg text-[#5e82a0] max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           DLX ROI analyses publicly available EPC and property data to identify homes
           that may be harder to cool naturally. We offer a free Home Cooling Readiness
@@ -72,7 +72,7 @@ export default function Hero() {
         >
           <button
             onClick={() => scrollTo("contact")}
-            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-dlx-gold text-[#07070f] font-semibold text-base hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_32px_rgba(201,168,76,0.28)] hover:shadow-[0_0_44px_rgba(201,168,76,0.42)]"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-dlx-gold text-[#060e1e] font-semibold text-base hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_32px_rgba(240,165,0,0.32)] hover:shadow-[0_0_48px_rgba(240,165,0,0.48)]"
           >
             Request Free Cooling Check
             <ArrowRight
@@ -82,7 +82,7 @@ export default function Hero() {
           </button>
           <button
             onClick={() => scrollTo("how-it-works")}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/[0.1] text-[#8888b0] text-base hover:text-white hover:border-white/[0.2] transition-all duration-200 hover:bg-white/[0.03]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/[0.14] text-[#7a9ab5] text-base hover:text-white hover:border-white/[0.28] transition-all duration-200 hover:bg-white/[0.04]"
           >
             See How It Works
           </button>
@@ -93,7 +93,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.85 }}
-          className="mt-16 flex flex-wrap justify-center items-center gap-x-7 gap-y-3 text-xs text-[#50506a]"
+          className="mt-16 flex flex-wrap justify-center items-center gap-x-7 gap-y-3 text-xs text-[#4a6e8f]"
         >
           {[
             "Free check, no obligation",
@@ -102,7 +102,7 @@ export default function Hero() {
             "Selected properties only",
           ].map((item) => (
             <div key={item} className="flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-dlx-gold/45 flex-shrink-0" />
+              <span className="w-1 h-1 rounded-full bg-dlx-gold/55 flex-shrink-0" />
               {item}
             </div>
           ))}
@@ -119,7 +119,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 9, 0] }}
           transition={{ duration: 1.9, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-14 bg-gradient-to-b from-transparent via-dlx-gold/35 to-transparent"
+          className="w-px h-14 bg-gradient-to-b from-transparent via-dlx-gold/45 to-transparent"
         />
       </motion.div>
     </section>

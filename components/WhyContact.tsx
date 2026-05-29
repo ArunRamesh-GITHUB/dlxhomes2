@@ -38,7 +38,7 @@ export default function WhyContact() {
 
   return (
     <section id="why-contact" className="py-24 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#07070f] via-[#0b0b1a] to-[#07070f]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#060e1e] via-[#091828] to-[#060e1e]" />
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -56,7 +56,7 @@ export default function WhyContact() {
               <br />
               <span className="text-dlx-gold">request the check</span>
             </h2>
-            <p className="text-[#6060a0] text-base leading-relaxed mb-8">
+            <p className="text-[#4a6e8f] text-base leading-relaxed mb-8">
               People get in touch for different reasons. Most just want to understand
               what their options are — and whether proper cooling actually makes sense
               for their specific property.
@@ -65,7 +65,7 @@ export default function WhyContact() {
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-dlx-gold/[0.08] border border-dlx-gold/[0.22] text-dlx-gold text-sm font-medium hover:bg-dlx-gold/[0.14] transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-dlx-gold/[0.10] border border-dlx-gold/[0.28] text-dlx-gold text-sm font-medium hover:bg-dlx-gold/[0.18] transition-all duration-200"
             >
               Request your free check
             </button>
@@ -81,14 +81,14 @@ export default function WhyContact() {
                   initial={{ opacity: 0, x: 24 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                  className="flex gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.08] transition-all duration-200"
+                  className="flex gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-white/[0.12] transition-all duration-200"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-dlx-gold/[0.07] border border-dlx-gold/[0.12] flex items-center justify-center text-dlx-gold mt-0.5">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-dlx-gold/[0.09] border border-dlx-gold/[0.16] flex items-center justify-center text-dlx-gold mt-0.5">
                     <Icon size={17} />
                   </div>
                   <div>
                     <h3 className="font-medium text-white text-sm mb-1">{reason.title}</h3>
-                    <p className="text-[#58589a] text-xs leading-relaxed">{reason.desc}</p>
+                    <p className="text-[#4a6e8f] text-xs leading-relaxed">{reason.desc}</p>
                   </div>
                 </motion.div>
               );

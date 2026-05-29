@@ -43,8 +43,8 @@ export default function Trust() {
 
   return (
     <section className="py-24 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#07070f] via-[#0c0c1e] to-[#07070f]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full bg-dlx-gold/[0.02] blur-[110px] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#060e1e] via-[#091828] to-[#060e1e]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full bg-dlx-gold/[0.04] blur-[110px] pointer-events-none" />
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
         {/* Heading */}
@@ -60,7 +60,7 @@ export default function Trust() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5">
             What you can expect from us
           </h2>
-          <p className="text-[#6060a0] text-base max-w-2xl mx-auto">
+          <p className="text-[#4a6e8f] text-base max-w-2xl mx-auto">
             Receiving a letter about your home can feel unexpected. Here&apos;s what you
             can always count on from DLX ROI — no pressure, no guesswork.
           </p>
@@ -76,14 +76,14 @@ export default function Trust() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.07 + i * 0.07 }}
-                className="flex gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.08] transition-all duration-200"
+                className="flex gap-4 p-5 rounded-2xl bg-white/[0.03] border border-white/[0.07] hover:border-white/[0.12] transition-all duration-200"
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-dlx-gold/[0.07] border border-dlx-gold/[0.13] flex items-center justify-center text-dlx-gold">
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-dlx-gold/[0.09] border border-dlx-gold/[0.17] flex items-center justify-center text-dlx-gold">
                   <Icon size={18} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-white text-sm mb-1.5">{point.title}</h3>
-                  <p className="text-[#56568a] text-xs leading-relaxed">{point.desc}</p>
+                  <p className="text-[#4a6e8f] text-xs leading-relaxed">{point.desc}</p>
                 </div>
               </motion.div>
             );

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
 const inputClass =
-  "w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07] text-white placeholder-[#35355a] text-sm focus:outline-none focus:border-dlx-gold/40 focus:bg-white/[0.05] transition-all duration-200";
+  "w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.09] text-white placeholder-[#2e5070] text-sm focus:outline-none focus:border-dlx-gold/45 focus:bg-white/[0.07] transition-all duration-200";
 
 export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
   const [form, setForm] = useState({
@@ -42,7 +42,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
         }),
       });
     } catch {
-      // still show success — don't block the user on a network error
+      // still show success
     } finally {
       setSubmitting(false);
       setSubmitted(true);
@@ -52,18 +52,18 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
   if (submitted) {
     return (
       <div className="p-10 text-center">
-        <div className="w-16 h-16 rounded-full bg-dlx-gold/[0.08] border border-dlx-gold/25 flex items-center justify-center mx-auto mb-6">
+        <div className="w-16 h-16 rounded-full bg-dlx-gold/[0.10] border border-dlx-gold/30 flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 size={28} className="text-dlx-gold" />
         </div>
         <h3 className="text-2xl font-bold text-white mb-3">
           Request received — we&apos;ll be in touch
         </h3>
-        <p className="text-[#6060a0] text-base max-w-md mx-auto leading-relaxed">
+        <p className="text-[#4a6e8f] text-base max-w-md mx-auto leading-relaxed">
           We&apos;ve got your request for a Free Home Cooling Readiness Check.
           We&apos;ll review your details and contact you to arrange the next step.
         </p>
         {campaignRef && (
-          <p className="mt-4 text-xs text-[#404060]">Reference: {campaignRef}</p>
+          <p className="mt-4 text-xs text-[#2e5070]">Reference: {campaignRef}</p>
         )}
       </div>
     );
@@ -72,14 +72,14 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
   return (
     <form onSubmit={handleSubmit} className="p-7 sm:p-10">
       {campaignRef && (
-        <div className="mb-6 px-4 py-2.5 rounded-lg bg-dlx-gold/[0.05] border border-dlx-gold/[0.15] text-xs text-dlx-gold">
+        <div className="mb-6 px-4 py-2.5 rounded-lg bg-dlx-gold/[0.07] border border-dlx-gold/[0.18] text-xs text-dlx-gold">
           Your reference: <span className="font-semibold">{campaignRef}</span>
         </div>
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
-          <label className="block text-xs font-medium text-[#7878a0] mb-2 tracking-wide">
+          <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
             Full Name <span className="text-dlx-gold">*</span>
           </label>
           <input
@@ -93,7 +93,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-[#7878a0] mb-2 tracking-wide">
+          <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
             Email Address <span className="text-dlx-gold">*</span>
           </label>
           <input
@@ -107,7 +107,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-[#7878a0] mb-2 tracking-wide">
+          <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
             Phone Number
           </label>
           <input
@@ -120,7 +120,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-[#7878a0] mb-2 tracking-wide">
+          <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
             Property Postcode <span className="text-dlx-gold">*</span>
           </label>
           <input
@@ -136,7 +136,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
       </div>
 
       <div className="mb-8">
-        <label className="block text-xs font-medium text-[#7878a0] mb-2 tracking-wide">
+        <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
           Anything else you&apos;d like us to know?
         </label>
         <textarea
@@ -152,7 +152,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-dlx-gold text-[#07070f] font-semibold text-base hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_32px_rgba(201,168,76,0.22)] hover:shadow-[0_0_44px_rgba(201,168,76,0.34)] disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-dlx-gold text-[#060e1e] font-semibold text-base hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_32px_rgba(240,165,0,0.25)] hover:shadow-[0_0_44px_rgba(240,165,0,0.38)] disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {submitting ? (
           <>
@@ -170,7 +170,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
         )}
       </button>
 
-      <p className="text-center text-xs text-[#404060] mt-4 leading-relaxed">
+      <p className="text-center text-xs text-[#2e5070] mt-4 leading-relaxed">
         By submitting this form you agree to us contacting you regarding your enquiry.
         We will never share your details with third parties.
       </p>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Cooling Assessment — DLX ROI</title>
+  <meta name="description" content="Register your interest in a home cooling assessment. Honest advice on whether AC, a heat pump, or passive improvements suit your property." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="cooling-page">
+  <div class="container">
+    <a href="/" class="cooling-logo">DLX <span class="text-gold">ROI</span></a>
+
+    <div class="cooling-badge">🌡️ Home Cooling Assessment</div>
+    <h1 class="cooling-title">Did this home get too hot<br><span class="text-gold">during the recent heatwave?</span></h1>
+    <p class="cooling-desc">Fans move warm air around. They do not properly cool the room. Register your interest and we'll assess what the right long-term answer is for your specific property.</p>
+
+    <div class="cooling-layout">
+      <!-- Left: info -->
+      <div>
+        <div class="cooling-checks">
+          <h2>What a cooling assessment covers</h2>
+          <ul class="check-list">
+            <li>Which rooms are most likely to become uncomfortable first</li>
+            <li>Whether fans, open windows, or passive cooling are likely to be enough</li>
+            <li>Whether insulation, ventilation, or shading improvements may help</li>
+            <li>Whether a modern AC / air-to-air heat pump system may be suitable</li>
+            <li>Where a system could realistically go</li>
+            <li>What the sensible long-term options are for this property</li>
+          </ul>
+        </div>
+        <div class="cooling-small">
+          <strong>Small print:</strong> This is based on publicly available EPC data and is not a survey, valuation, quote, guarantee, or professional recommendation. Cooling, AC, or heat pump installations may be subject to suitability, planning, noise, leasehold, conservation-area, or listed-building checks. DLX ROI does not install AC systems.
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="cooling-form-card">
+        <div class="form-success" id="cooling-success" style="display:none">
+          <div class="success-icon">✓</div>
+          <h3>Request received — we'll be in touch</h3>
+          <p>We've got your interest registered. We'll review your details and contact you to discuss the cooling options for your property.</p>
+          <p id="ref-display" style="margin-top:16px;font-size:12px;color:var(--faint)"></p>
+        </div>
+        <div id="cooling-form-wrap">
+          <div class="cooling-ref" id="ref-banner" style="display:none;margin-top:24px">
+            Your reference: <strong id="ref-value"></strong>
+          </div>
+          <div class="form-inner">
+            <form id="cooling-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Full Name <span class="req">*</span></label>
+                  <input type="text" name="name" placeholder="Jane Smith" required />
+                </div>
+                <div class="form-group">
+                  <label>Email Address <span class="req">*</span></label>
+                  <input type="email" name="email" placeholder="jane@example.com" required />
+                </div>
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" name="phone" placeholder="07700 900000" />
+                </div>
+                <div class="form-group">
+                  <label>Property Postcode <span class="req">*</span></label>
+                  <input type="text" name="postcode" placeholder="SW1A 1AA" required style="text-transform:uppercase" />
+                </div>
+                <div class="form-group full">
+                  <label>Anything else you'd like us to know?</label>
+                  <textarea name="message" rows="3" placeholder="E.g. which rooms get hottest, whether you have AC already, any planning or leasehold questions..."></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn-primary form-submit">Register My Interest →</button>
+              <p class="form-note">By submitting this form you agree to us contacting you regarding your enquiry. We will never share your details with third parties.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

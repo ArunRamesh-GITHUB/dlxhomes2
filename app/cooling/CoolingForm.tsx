@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
 const inputClass =
-  "w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.09] text-white placeholder-[#2e5070] text-sm focus:outline-none focus:border-dlx-gold/45 focus:bg-white/[0.07] transition-all duration-200";
+  "w-full px-4 py-3 rounded-xl bg-[#f8f7f4] border border-stone-200 text-stone-700 placeholder-stone-400 text-sm focus:outline-none focus:border-dlx-gold focus:ring-1 focus:ring-dlx-gold/20 transition-all duration-200";
 
 export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
   const [form, setForm] = useState({
@@ -55,15 +55,15 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
         <div className="w-16 h-16 rounded-full bg-dlx-gold/[0.10] border border-dlx-gold/30 flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 size={28} className="text-dlx-gold" />
         </div>
-        <h3 className="text-2xl font-bold text-white mb-3">
+        <h3 className="text-2xl font-bold text-[#1a1a2e] mb-3">
           Request received — we&apos;ll be in touch
         </h3>
-        <p className="text-[#4a6e8f] text-base max-w-md mx-auto leading-relaxed">
-          We&apos;ve got your request for a Free Home Cooling Readiness Check.
-          We&apos;ll review your details and contact you to arrange the next step.
+        <p className="text-stone-500 text-base max-w-md mx-auto leading-relaxed">
+          We&apos;ve got your interest registered. We&apos;ll review your details and
+          contact you to discuss the cooling options for your property.
         </p>
         {campaignRef && (
-          <p className="mt-4 text-xs text-[#2e5070]">Reference: {campaignRef}</p>
+          <p className="mt-4 text-xs text-stone-400">Reference: {campaignRef}</p>
         )}
       </div>
     );
@@ -79,7 +79,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         <div>
-          <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
+          <label className="block text-xs font-medium text-stone-500 mb-2 tracking-wide">
             Full Name <span className="text-dlx-gold">*</span>
           </label>
           <input
@@ -93,7 +93,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
+          <label className="block text-xs font-medium text-stone-500 mb-2 tracking-wide">
             Email Address <span className="text-dlx-gold">*</span>
           </label>
           <input
@@ -107,7 +107,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
+          <label className="block text-xs font-medium text-stone-500 mb-2 tracking-wide">
             Phone Number
           </label>
           <input
@@ -120,7 +120,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-[#6a90b0] mb-2 tracking-wide">
+          <label className="block text-xs font-medium text-stone-500 mb-2 tracking-wide">
             Property Postcode <span className="text-dlx-gold">*</span>
           </label>
           <input
@@ -152,7 +152,7 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-dlx-gold text-[#060e1e] font-semibold text-base hover:bg-dlx-gold-light transition-all duration-200 shadow-[0_0_32px_rgba(240,165,0,0.25)] hover:shadow-[0_0_44px_rgba(240,165,0,0.38)] disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-dlx-gold text-white font-semibold text-base hover:bg-dlx-gold-light transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {submitting ? (
           <>
@@ -165,12 +165,12 @@ export default function CoolingForm({ campaignRef }: { campaignRef: string }) {
         ) : (
           <>
             <Send size={16} />
-            Request My Free Cooling Check
+            Register My Interest
           </>
         )}
       </button>
 
-      <p className="text-center text-xs text-[#2e5070] mt-4 leading-relaxed">
+      <p className="text-center text-xs text-stone-400 mt-4 leading-relaxed">
         By submitting this form you agree to us contacting you regarding your enquiry.
         We will never share your details with third parties.
       </p>

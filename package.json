@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "opennextjs-cloudflare build",
+    "build:cf": "opennextjs-cloudflare build && node -e \"const{copyFileSync}=require('fs');try{copyFileSync('.open-next/worker.js','.open-next/assets/_worker.js')}catch(e){console.log('copy note:',e.message)}\"",
     "start": "next start",
     "lint": "eslint",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",

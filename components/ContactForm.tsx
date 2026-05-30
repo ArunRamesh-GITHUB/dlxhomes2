@@ -45,18 +45,17 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
     try {
-      await fetch("/api/cooling-enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          source: "website_contact_form",
-          submitted_at: new Date().toISOString(),
-        }),
-      });
+      if (formspreeId) {
+        await fetch(`https://formspree.io/f/${formspreeId}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({ ...form, source: "website_contact_form" }),
+        });
+      }
     } catch {
-      // still show success
+      // show success regardless
     } finally {
       setSubmitting(false);
       setSubmitted(true);

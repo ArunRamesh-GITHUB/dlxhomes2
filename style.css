@@ -1,0 +1,265 @@
+:root {
+  --navy: #0b2436;
+  --green: #0f3d2e;
+  --green-dark: #0a2b20;
+  --cream: #f7f5ee;
+  --text: #14201f;
+  --muted: #4a5a58;
+  --border: #d8d3c3;
+  --error: #7a1f1f;
+  --focus: #c98a2c;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 0;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.phone-link {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  border: 2px solid #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.phone-link:active,
+.phone-link:hover {
+  background: #fff;
+  color: var(--navy);
+}
+
+/* Hero */
+.hero {
+  background: var(--green);
+  color: #fff;
+  padding: 40px 0 36px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.hero .subline {
+  font-size: 19px;
+  margin: 0 0 24px;
+  color: #e4ede9;
+}
+
+.phone-cta {
+  display: inline-block;
+  color: #fff;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Form */
+.form-section {
+  background: #fff;
+  padding: 32px 0 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-section h2 {
+  font-size: 24px;
+  margin: 0 0 20px;
+  color: var(--navy);
+}
+
+#lead-form label {
+  display: block;
+  font-weight: 700;
+  margin: 18px 0 6px;
+  font-size: 16px;
+}
+
+#lead-form label[for="name"] {
+  margin-top: 0;
+}
+
+#lead-form input[type="text"],
+#lead-form input[type="tel"],
+#lead-form select {
+  width: 100%;
+  font-size: 18px;
+  padding: 14px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  font-family: inherit;
+}
+
+#lead-form input:focus,
+#lead-form select:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+  border-color: var(--focus);
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#submit-btn {
+  width: 100%;
+  margin-top: 26px;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--green);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#submit-btn:hover,
+#submit-btn:focus {
+  background: var(--green-dark);
+}
+
+#submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-note {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.field-error {
+  color: var(--error);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Success / error states */
+.success-state,
+.error-state {
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.success-state {
+  background: #e6f0e9;
+  border: 2px solid var(--green);
+}
+
+.success-state h2 {
+  color: var(--green);
+  margin-top: 0;
+}
+
+.error-state {
+  background: #f5e6e6;
+  border: 2px solid var(--error);
+  color: var(--error);
+}
+
+/* Trust section */
+.trust-section {
+  background: var(--cream);
+  padding: 32px 0 40px;
+}
+
+.trust-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.trust-list li {
+  position: relative;
+  padding: 8px 0 8px 32px;
+  font-size: 17px;
+}
+
+.trust-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.about-line {
+  font-size: 15px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--navy);
+  color: #fff;
+  padding: 28px 0;
+  text-align: center;
+  font-size: 15px;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer p {
+  margin: 6px 0;
+}
+
+@media (min-width: 600px) {
+  .hero h1 { font-size: 36px; }
+  body { font-size: 19px; }
+}

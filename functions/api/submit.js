@@ -62,44 +62,62 @@ export async function onRequestPost(context) {
     status: 'new'
   };
 
-  // Insert into Supabase
-  try {
-    const supabaseRes = await fetch(`${env.SUPABASE_URL}/rest/v1/leads`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        apikey: env.SUPABASE_SERVICE_KEY,
-        Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}`,
-        Prefer: 'return=minimal'
-      },
-      body: JSON.stringify(lead)
-    });
+  // Notify Telegram and save to Supabase independently — a failure in one
+  // must not stop the other, since Telegram is the primary way leads get
+  // acted on and shouldn't be blocked by a Supabase outage (or vice versa).
+  const [supabaseOk, telegramOk] = await Promise.all([
+    (async () => {
+      try {
+        const supabaseRes = await fetch(`${env.SUPABASE_URL}/rest/v1/leads`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            apikey: env.SUPABASE_SERVICE_KEY,
+            Authorization: `Bearer ${env.SUPABASE_SERVICE_KEY}`,
+            Prefer: 'return=minimal'
+          },
+          body: JSON.stringify(lead)
+        });
 
-    if (!supabaseRes.ok) {
-      const text = await supabaseRes.text();
-      console.error('Supabase insert failed:', supabaseRes.status, text);
-      return json({ error: 'Could not save lead' }, 502);
-    }
-  } catch (e) {
-    console.error('Supabase request error:', e);
+        if (!supabaseRes.ok) {
+          const text = await supabaseRes.text();
+          console.error('Supabase insert failed:', supabaseRes.status, text);
+          return false;
+        }
+        return true;
+      } catch (e) {
+        console.error('Supabase request error:', e);
+        return false;
+      }
+    })(),
+    (async () => {
+      try {
+        const message =
+          `🔥 New lead: ${name}, ${phoneRaw}, ${postcode}, ${heatingType}, call ${callTime}`;
+
+        const tgRes = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: env.TELEGRAM_CHAT_ID,
+            text: message
+          })
+        });
+
+        if (!tgRes.ok) {
+          console.error('Telegram notify failed:', tgRes.status, await tgRes.text());
+          return false;
+        }
+        return true;
+      } catch (e) {
+        console.error('Telegram notify error:', e);
+        return false;
+      }
+    })()
+  ]);
+
+  if (!supabaseOk && !telegramOk) {
     return json({ error: 'Could not save lead' }, 502);
-  }
-
-  // Fire Telegram notification (best-effort — don't fail the request if this fails)
-  try {
-    const message =
-      `🔥 New lead: ${name}, ${phoneRaw}, ${postcode}, ${heatingType}, call ${callTime}`;
-
-    await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: env.TELEGRAM_CHAT_ID,
-        text: message
-      })
-    });
-  } catch (e) {
-    console.error('Telegram notify failed:', e);
   }
 
   return json({ ok: true });

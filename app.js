@@ -15,7 +15,7 @@
       postcode: form.postcode.value.trim(),
       heating_type: form.heating_type.value,
       call_time: form.call_time.value,
-      company: form.company.value, // honeypot
+      hp_check_1a2b: form.hp_check_1a2b.value, // honeypot
       loaded_at: loadedAt
     };
 

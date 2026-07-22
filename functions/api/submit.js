@@ -25,7 +25,7 @@ export async function onRequestPost(context) {
   }
 
   // Honeypot: bots tend to fill every field
-  if (data.company) {
+  if (data.hp_check_1a2b) {
     return json({ ok: true }); // silently accept, do nothing
   }
 

@@ -55,10 +55,12 @@
           <option value="Evening">Evening</option>
         </select>
 
-        <!-- Honeypot field: real users never fill this in -->
+        <!-- Honeypot field: name/id/label deliberately avoid common autofill
+             keywords (e.g. "company", "website") so browser/password-manager
+             autofill doesn't populate it and cause real leads to be dropped. -->
         <div class="hp-field" aria-hidden="true">
-          <label for="company">Company</label>
-          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+          <label for="hp-check-1a2b">Leave this field blank</label>
+          <input type="text" id="hp-check-1a2b" name="hp_check_1a2b" tabindex="-1" autocomplete="off">
         </div>
 
         <button type="submit" id="submit-btn">Check My Eligibility</button>
